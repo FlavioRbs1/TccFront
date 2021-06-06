@@ -9,6 +9,8 @@ import { ClientesModule } from './clientes/clientes.module';
 import { MetricasModule } from './metricas/metricas.module';
 import { ConfiguracaoModule } from './configuracao/configuracao.module';
 import { UsuariosModule } from './usuarios/usuarios.module';
+import { HistoricoModule } from './historico/historico.module';
+import { IndicadoresModule } from './indicadores/indicadores.module';
 
 
 
@@ -24,7 +26,9 @@ import { UsuariosModule } from './usuarios/usuarios.module';
     ClientesModule,
     MetricasModule,
     ConfiguracaoModule,
-    UsuariosModule
+    UsuariosModule,
+    HistoricoModule,
+    IndicadoresModule
   ],
   providers: [],
   bootstrap: [AppComponent]
