@@ -7,21 +7,24 @@ import { TemplateModule} from './template/template.module';
 import { HomeComponent } from './home/home.component';
 import { ClientesModule } from './clientes/clientes.module';
 import { MetricasModule } from './metricas/metricas.module';
+import { ConfiguracaoModule } from './configuracao/configuracao.module';
+import { UsuariosModule } from './usuarios/usuarios.module';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-   
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     TemplateModule,
     ClientesModule,
-    MetricasModule
+    MetricasModule,
+    ConfiguracaoModule,
+    UsuariosModule
   ],
   providers: [],
   bootstrap: [AppComponent]
