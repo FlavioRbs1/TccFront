@@ -3,7 +3,7 @@
     <li class="breadcrumb-item active">Atualização de dados de clientes</li>
 </ol>
 <div class="container">
-    <form #clienteForm="ngForm" (ngSubmit)="onSubmit()">
+    <form #clientesForm="ngForm" (ngSubmit)="onSubmit()">
         <div class="row">
             <div class="col-md-2">
                 <div class="form-group">
@@ -58,6 +58,9 @@
                 </div>
             </div>
         </div>
-        <button type="button" class="btn btn-success" >Próximo <i class="fas fa-angle-double-right"></i></button>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item active">Atualização de dados de endereço</li>
+        </ol>
+        <button type="submit" class="btn btn-success"  >Salvar <i class="far fa-save"></i></button>
     </form>
 </div>

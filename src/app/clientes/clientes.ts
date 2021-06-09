@@ -1,13 +1,14 @@
 export class Cliente{
-    id: number |undefined ;
-    nome: string = "";
-    cpf: string  = "";
-    rg: string  = "";
-    sexo: string = "";
-    tel1: string = "";
-    tel2: string = "";
-    estadoCivil: string = "";
-    dtNasc: string = "";
-    comentarios:string = "";
+    id: number | any;
+    nome: string | any ;
+    cpf: string | any  ;
+    rg: string | any ;
+    sexo: string | any ;
+    tel1: string | any ;
+    tel2: string | any;
+    estadoCivil: string| any ;
+    dtNasc: string| any ;
+    comentarios:string| any ;
+ 
     
 }

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TemplateModule} from './template/template.module';
@@ -11,6 +11,8 @@ import { ConfiguracaoModule } from './configuracao/configuracao.module';
 import { UsuariosModule } from './usuarios/usuarios.module';
 import { HistoricoModule } from './historico/historico.module';
 import { IndicadoresModule } from './indicadores/indicadores.module';
+import { ClientesService } from './clientes.service';
+
 
 
 
@@ -21,6 +23,7 @@ import { IndicadoresModule } from './indicadores/indicadores.module';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     TemplateModule,
     ClientesModule,
@@ -30,7 +33,9 @@ import { IndicadoresModule } from './indicadores/indicadores.module';
     HistoricoModule,
     IndicadoresModule
   ],
-  providers: [],
+  providers: [
+    ClientesService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
