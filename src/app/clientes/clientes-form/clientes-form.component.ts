@@ -19,7 +19,7 @@ export class ClientesFormComponent implements OnInit {
 
   onSubmit(){
     this.service.salvar(this.clientec).subscribe(response =>{
-      console.log(this.clientec);
+      console.log(response);
     })
   }
 

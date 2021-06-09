@@ -10,57 +10,68 @@
                     <label>ID:</label>
                     <input type="text" class="form-control" disabled="true" [(ngModel)]="clientec.id" name="id">
                 </div>
-            </div>          
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="form-group">
-                    <label>NOME:*</label>
-                    <input type="text" class="form-control" [(ngModel)]="clientec.nome" name="nome" >
-                </div>
-            </div>   
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label>RG:*</label>
-                    <input type="text" class="form-control" [(ngModel)]="clientec.rg" name="rg">
-                </div>
-                <div class="form-group">
-                    <label>TEL 1:*</label>
-                    <input type="text" class="form-control" [(ngModel)]="clientec.tel1" name="tel1">
-                </div>
-                <div class="form-group">
-                    <label>DT NASCIMENTO:*</label>
-                    <input type="text" class="form-control" [(ngModel)]="clientec.dtNasc" name="dtNasc">
-                </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
                     <label>CPF:*</label>
                     <input type="text" class="form-control" [(ngModel)]="clientec.cpf" name="cpf">
-                </div>
-                <div class="form-group">
-                    <label>TEL 2: </label>
-                    <input type="text" class="form-control" [(ngModel)]="clientec.tel2" name="tel2">
-                </div>
-                <div class="form-group">
-                    <label>COMENTARIOS: </label>
-                    <input type="text" class="form-control" [(ngModel)]="clientec.comentarios" name="comentarios">
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label>SEXO: </label>
-                    <input type="text" class="form-control" [(ngModel)]="clientec.sexo" name="sexo">
-                </div>
-                <div class="form-group">
-                    <label>ESTADO CIVIL : </label>
-                    <input type="text" class="form-control" [(ngModel)]="clientec.estadoCivil" name="estadoCivil">
+                    <button type="menu" class="btn btn-success">Buscar</button>
                 </div>
             </div>
         </div>
-        <ol class="breadcrumb mb-4">
-            <li class="breadcrumb-item active">Atualização de dados de endereço</li>
-        </ol>
-        <button type="submit" class="btn btn-success"  >Salvar <i class="far fa-save"></i></button>
-    </form>
+<div class="row">
+    <div class="col-md-12">
+        <div class="form-group">
+            <label>NOME:*</label>
+            <input type="text" class="form-control" [(ngModel)]="clientec.nome" name="nome">
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group">
+            <label>RG:*</label>
+            <input type="text" class="form-control" [(ngModel)]="clientec.rg" name="rg">
+        </div>
+        <div class="form-group">
+            <label>TEL 1:*</label>
+            <input type="text" class="form-control" [(ngModel)]="clientec.tel1" name="tel1">
+        </div>
+        <div class="form-group">
+            <label>DT NASCIMENTO:*</label>
+            <input type="text" class="form-control" [(ngModel)]="clientec.dtNasc" name="dtNasc">
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group">
+            <label>TEL 2: </label>
+            <input type="text" class="form-control" [(ngModel)]="clientec.tel2" name="tel2">
+        </div>
+        <div class="form-group">
+            <label>COMENTARIOS: </label>
+            <input type="text" class="form-control" [(ngModel)]="clientec.comentarios" name="comentarios">
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group">
+            <label>SEXO: </label>
+            <input type="text" class="form-control" [(ngModel)]="clientec.sexo" name="sexo">
+        </div>
+        <div class="form-group">
+            <label>ESTADO CIVIL : </label>
+            <input type="text" class="form-control" [(ngModel)]="clientec.estadoCivil" name="estadoCivil">
+        </div>
+    </div>
+</div>
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active">Atualização de dados de endereço</li>
+</ol>
+
+
+<button type="submit" class="btn btn-success">Salvar <i class="far fa-save"></i></button>
+
+
+
+
+
+
+</form>
 </div>
