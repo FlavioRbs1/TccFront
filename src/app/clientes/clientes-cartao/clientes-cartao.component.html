@@ -1,4 +1,4 @@
-<h1 class="mt-4">Solicitação de Cartões</h1>
+<h1 class="mt-4">Liberação de crédito por pedido</h1>
 <ol class="breadcrumb mb-4">
     <li class="breadcrumb-item active">Atualização de dados de clientes</li>
 </ol>
@@ -18,6 +18,13 @@
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
                 </form>
             </div>
+            <div class="col-md-4">
+                <label>PEDIDO:</label>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="" aria-label="Pesquisar">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
+                </form>
+            </div>
 
         </div>
         <div class="row">
@@ -29,75 +36,60 @@
             </div>
             <div class="col-md-4">
                 <div class="form-group">
-                    <label>RG:*</label>
-                    <input type="text" class="form-control" [(ngModel)]="clientec.rg" name="rg">
+                    <label>CPF:*</label>
+                    <input type="text" class="form-control" [(ngModel)]="clientec.rg" name="cpf">
                 </div>
+
+            </div>
+            <div class="col-md-4">
                 <div class="form-group">
-                    <label>TEL 1:*</label>
-                    <input type="text" class="form-control" [(ngModel)]="clientec.tel1" name="tel1">
+                    <label>RG: </label>
+                    <input type="text" class="form-control" [(ngModel)]="clientec.tel2" name="rg">
                 </div>
+            </div>
+            <div class="col-md-4">
                 <div class="form-group">
                     <label>DT NASCIMENTO:*</label>
                     <input type="text" class="form-control" [(ngModel)]="clientec.dtNasc" name="dtNasc">
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label>TEL 2: </label>
-                    <input type="text" class="form-control" [(ngModel)]="clientec.tel2" name="tel2">
-                </div>
+            <div class="col-md-12">
                 <div class="form-group">
                     <label>COMENTARIOS: </label>
                     <input type="text" class="form-control" [(ngModel)]="clientec.comentarios" name="comentarios">
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label>SEXO: </label>
-                    <input type="text" class="form-control" [(ngModel)]="clientec.sexo" name="sexo">
-                </div>
-                <div class="form-group">
-                    <label>ESTADO CIVIL : </label>
-                    <input type="text" class="form-control" [(ngModel)]="clientec.estadoCivil" name="estadoCivil">
-                </div>
-            </div>
         </div>
         <ol class="breadcrumb mb-4">
-            <li class="breadcrumb-item active">Atualização de dados de endereço</li>
+            <li class="breadcrumb-item active">Informações de pedido</li>
         </ol>
         <div class="container">
             <form #enderecosForm="ngForm" (ngSubmit)="onSubmit()">
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-4">
                         <div class="form-group">
-                            <label>Endereço</label>
-                            <input type="text" class="form-control" name="endereco">
+                            <label>DATA DO PEDIDO</label><br>
+                            <label>DATA </label>
+                        </div>
+                        <div class="form-group">
+                            <label>QUANTIDADE DE PARCELAS</label><br>
+                            <label>QTD</label>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label>Numero</label>
-                            <input type="number" class="form-control" name="numero">
+                            <label>VALOR DO PEDIDO</label><br>
+                            <label>VALOR</label>
                         </div>
                         <div class="form-group">
-                            <label>Cidade</label>
-                            <input type="text" class="form-control" name="cidade">
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label>Complemento</label>
-                            <input type="text" class="form-control" name="complemento">
-                        </div>
-                        <div class="form-group">
-                            <label>Estado</label>
-                            <input type="text" class="form-control" name="estado">
+                            <label>SITUAÇÃO DO PEDIDO</label><br>
+                            <label>SITUAÇÃO</label>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label>Bairro</label>
-                            <input type="text" class="form-control" name="bairro">
+                            <label>FORMA DE PAGAMENTO</label><br>
+                            <label>FORMA</label>
                         </div>
                     </div>
                 </div>
