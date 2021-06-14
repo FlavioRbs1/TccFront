@@ -2,20 +2,7 @@
 <ol class="breadcrumb mb-4">
     <li class="breadcrumb-item active" class="font-weight-bold">Configuração de métricas</li>
 </ol>
-<div class="conteiner-fluid m-4">
-    <div class="form-check">
-        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="opcao1" checked>
-        <label class="form-check-label" for="exampleRadios1">
-          Ativar esta analise
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="opcao2">
-        <label class="form-check-label" for="exampleRadios2">
-          Desativar esta analise
-        </label>
-      </div>
-</div>
+
 <ol class="breadcrumb mb-4">
     <li class="breadcrumb-item active">Analise por CPF</li>
     <p>Se você ativar esta opção, a métrica de analise por CPF, realizará uma pesquisa na base de dados,
@@ -112,24 +99,7 @@
         </label>
       </div>
 </div>
-<ol class="breadcrumb mb-4">
-    <li class="breadcrumb-item active">Analise por Solicitação de crédito</li>
-    <p>Se você ativar esta opção, a métrica de analise por solicitação de crédito, enquadrará todos os
-        pedidos na regra de liberação de crédito por valor .</p>
-</ol><div class="conteiner-fluid m-4">
-    <div class="form-check">
-        <input class="form-check-input" type="radio" name="exampleRadios7" id="exampleRadios1" value="opcao1" checked>
-        <label class="form-check-label" for="exampleRadios1">
-          Ativar esta analise
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="exampleRadios7" id="exampleRadios2" value="opcao2">
-        <label class="form-check-label" for="exampleRadios2">
-          Desativar esta analise
-        </label>
-      </div>
-</div>
+
 <ol class="breadcrumb mb-4">
     <li class="breadcrumb-item active">Analise por Percentual de endividamento</li>
     <p>Se você ativar esta opção, a métrica de analise por percentual de endividamento, encontrará o
@@ -149,4 +119,50 @@
           Desativar esta analise
         </label>
       </div>
+      <br>
+      <div class="row">
+        <div class="col-md-2">
+          <input type="number" class="form-control" >
+        </div>
+        <div class="col-md-6">
+          <label>% de endividamento em relação à renda individual</label>
+        </div>
+      </div>
+</div>
+<ol class="breadcrumb mb-4">
+  <li class="breadcrumb-item active">Liberação automática de crédito</li>
+  <p>Se você ativar esta opção, o sistema liberará o crédito de acordo com os valores estipulados pela instituição,
+     baseada na regra que o cliente estiver classificado.</p>
+</ol><div class="conteiner-fluid m-4">
+  <div class="form-check">
+      <input class="form-check-input" type="radio" name="exampleRadios7" id="exampleRadios1" value="opcao1" checked>
+      <label class="form-check-label" for="exampleRadios1">
+        Ativar esta analise
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="exampleRadios7" id="exampleRadios2" value="opcao2">
+      <label class="form-check-label" for="exampleRadios2">
+        Desativar esta analise
+      </label>
+    </div>
+    <br>
+   <div class="row">
+     <div class="col-md-2">
+       <label class="m-4">CLASSIFICAÇÃO</label>
+       <div class="p-3 mb-2 bg-danger text-white">VERMELHO</div><br>
+       <div class="p-3 mb-2 bg-warning text-dark">AMARELO</div><br>
+       <div class="p-3 mb-2 bg-success text-white">VERDE</div><br>
+       <div class="p-3 mb-2 bg-primary text-white">AZUL</div>
+     </div>
+     <div class="col-md-2">
+       <br>
+       <br>
+       <br>
+       <div class="p-3 mb-2 bg-danger text-white"><input type="number" class="form-control" ></div>
+       <div class="p-3 mb-2 bg-warning text-dark"><input type="number" class="form-control" ></div><br>
+       <div class="p-3 mb-2 bg-success text-white"><input type="number" class="form-control" ></div>
+       <div class="p-3 mb-2 bg-primary text-white"><input type="number" class="form-control" ></div>
+     </div>
+   </div> 
 </div>
