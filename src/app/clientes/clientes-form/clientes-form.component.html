@@ -18,7 +18,6 @@
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
                 </form>
             </div>
-
         </div>
         <div class="row">
             <div class="col-md-12">
@@ -62,94 +61,7 @@
                 </div>
             </div>
         </div>
-        <ol class="breadcrumb mb-4">
-            <li class="breadcrumb-item active">Atualização de dados de endereço</li>
-        </ol>
-        <div class="container">
-            <form #enderecosForm="ngForm" (ngSubmit)="onSubmit()">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <label>Endereço</label>
-                            <input type="text" class="form-control" name="endereco">
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label>Numero</label>
-                            <input type="number" class="form-control" name="numero">
-                        </div>
-                        <div class="form-group">
-                            <label>Cidade</label>
-                            <input type="text" class="form-control" name="cidade">
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label>Complemento</label>
-                            <input type="text" class="form-control" name="complemento">
-                        </div>
-                        <div class="form-group">
-                            <label>Estado</label>
-                            <input type="text" class="form-control" name="estado">
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label>Bairro</label>
-                            <input type="text" class="form-control" name="bairro">
-                        </div>
-                    </div>
-                </div>
-            </form>
-        </div>
-        <ol class="breadcrumb mb-4">
-            <li class="breadcrumb-item active">Atualização de renda familiar</li>
-        </ol>
-        <div class="container">
-            <form #rendasForm="ngForm" (ngSubmit)="onSubmit()">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label>Dependentes</label>
-                            <input type="number" class="form-control" name="dependentes">
-                        </div>
-                        <div class="form-group">
-                            <label>Renda</label>
-                            <input type="number" class="form-control" name="renda">
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label>Profissão</label>
-                            <input type="text" class="form-control" name="profissao">
-                        </div>
-                        <div class="form-group">
-                            <label>Renda familiar</label>
-                            <input type="number" class="form-control" name="rendaFamiliar">
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label>Empresa</label>
-                            <input type="text" class="form-control" name="empresa">
-                        </div>
-                        <div class="form-group">
-                            <label>Renda Total</label><br>
-                            <label>VALOR TOTAL</label>
-                        </div>
-                    </div>
-                </div>
-            </form>
-        </div>
-
-
-        <button type="submit" class="btn btn-success">Salvar <i class="far fa-save"></i></button>
-
-
-
-
-
-
+        <button  class="btn btn-success mr-2">Alterar <i class="fas fa-edit"></i></button>
+        <button type="submit" class="btn btn-success">Proximo <i class="fas fa-forward"></i></button>
     </form>
 </div>

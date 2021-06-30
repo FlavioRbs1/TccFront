@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { htmlPrefilter } from 'jquery';
 import { ClientesService } from 'src/app/clientes.service';
 import { Cliente } from '../clientes';
 @Component({

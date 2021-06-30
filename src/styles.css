@@ -9902,10 +9902,7 @@ blockquote {
     display: table-header-group;
   }
 
-  tr,
-img {
-    page-break-inside: avoid;
-  }
+
 
   p,
 h2,
@@ -9954,12 +9951,7 @@ h3 {
   .table-dark {
     color: inherit;
   }
-  .table-dark th,
-.table-dark td,
-.table-dark thead th,
-.table-dark tbody + tbody {
-    border-color: #dee2e6;
-  }
+
 
   .table .thead-dark th {
     color: inherit;

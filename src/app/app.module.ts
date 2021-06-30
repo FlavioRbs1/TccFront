@@ -12,6 +12,9 @@ import { UsuariosModule } from './usuarios/usuarios.module';
 import { HistoricoModule } from './historico/historico.module';
 import { IndicadoresModule } from './indicadores/indicadores.module';
 import { ClientesService } from './clientes.service';
+import { RendasModule } from './rendas/rendas.module';
+import { EnderecosModule } from './enderecos/enderecos.module';
+import { EnderecosService } from './enderecos.service';
 
 
 
@@ -32,10 +35,13 @@ import { ClientesService } from './clientes.service';
     ConfiguracaoModule,
     UsuariosModule,
     HistoricoModule,
-    IndicadoresModule
+    IndicadoresModule,
+    RendasModule,
+    EnderecosModule
   ],
   providers: [
-    ClientesService
+    ClientesService,
+    EnderecosService
   ],
   bootstrap: [AppComponent]
 })

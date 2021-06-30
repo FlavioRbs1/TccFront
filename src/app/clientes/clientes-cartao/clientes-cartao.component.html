@@ -37,14 +37,14 @@
             <div class="col-md-4">
                 <div class="form-group">
                     <label>CPF:*</label>
-                    <input type="text" class="form-control" [(ngModel)]="clientec.rg" name="cpf">
+                    <input type="text" class="form-control" [(ngModel)]="clientec.cpf" name="cpf">
                 </div>
 
             </div>
             <div class="col-md-4">
                 <div class="form-group">
                     <label>RG: </label>
-                    <input type="text" class="form-control" [(ngModel)]="clientec.tel2" name="rg">
+                    <input type="text" class="form-control" [(ngModel)]="clientec.tel2" name="tel2">
                 </div>
             </div>
             <div class="col-md-4">
@@ -95,53 +95,8 @@
                 </div>
             </form>
         </div>
-        <ol class="breadcrumb mb-4">
-            <li class="breadcrumb-item active">Atualização de renda familiar</li>
-        </ol>
-        <div class="container">
-            <form #rendasForm="ngForm" (ngSubmit)="onSubmit()">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label>Dependentes</label>
-                            <input type="number" class="form-control" name="dependentes">
-                        </div>
-                        <div class="form-group">
-                            <label>Renda</label>
-                            <input type="number" class="form-control" name="renda">
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label>Profissão</label>
-                            <input type="text" class="form-control" name="profissao">
-                        </div>
-                        <div class="form-group">
-                            <label>Renda familiar</label>
-                            <input type="number" class="form-control" name="rendaFamiliar">
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label>Empresa</label>
-                            <input type="text" class="form-control" name="empresa">
-                        </div>
-                        <div class="form-group">
-                            <label>Renda Total</label><br>
-                            <label>VALOR TOTAL</label>
-                        </div>
-                    </div>
-                </div>
-            </form>
-        </div>
-
-
-        <button type="submit" class="btn btn-success">Salvar <i class="far fa-save"></i></button>
-
-
-
-
-
-
+        <button  class="btn btn-success mr-2">Alterar <i class="fas fa-edit"></i></button>
+        <button type="submit" class="btn btn-success">Continuar <i class="fas fa-forward"></i></button>
+     
     </form>
 </div>
