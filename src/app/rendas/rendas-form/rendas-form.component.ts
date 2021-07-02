@@ -23,4 +23,7 @@ export class RendasFormComponent implements OnInit {
       console.log(response);
     })
   }
+  chamaCadastroEndereco(){
+    window.location.href=("enderecos-form");
+  }
 }

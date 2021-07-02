@@ -12,7 +12,7 @@ export class ClientesService {
   salvar(cliente:Cliente):Observable<Cliente>{
     return this.http.post<Cliente>('http://localhost:8080/api/clientes',cliente);
   }
-
- 
-
+  alterar(cliente:Cliente):Observable<Cliente>{
+    return this.http.put<Cliente>('http://localhost:8080/api/clientes',cliente);
+  }
 }

@@ -24,5 +24,10 @@ export class EnderecosFormComponent implements OnInit {
       console.log(response);
     } )
   }
-
+  chamaRendas(){
+    window.location.href="rendas-form";
+  }
+  chamaClientesForm(){
+    window.location.href="clientes-form"
+  }
 }

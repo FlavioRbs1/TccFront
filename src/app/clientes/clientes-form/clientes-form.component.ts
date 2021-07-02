@@ -22,4 +22,13 @@ export class ClientesFormComponent implements OnInit {
       console.log(response);
     })
   }
+  alteraCadastroCliente(){
+    this.service.alterar(this.clientec).subscribe(response =>{
+      console.log(response);
+    })
+  }
+  chamaCadastroEndereco(){
+    window.location.href=("enderecos-form")
+  }
+
 }

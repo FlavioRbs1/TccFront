@@ -24,4 +24,7 @@ export class ClientesCartaoComponent implements OnInit {
       console.log(response);
     })
   }
+  chamaRendas(){
+    window.location.href="rendas-form";
+  }
 }
