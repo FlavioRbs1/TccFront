@@ -11,7 +11,8 @@ import { IndicadoresFormComponent } from './indicadores-form/indicadores-form.co
   ],
   imports: [
     CommonModule,
-    IndicadoresRoutingModule
+    IndicadoresRoutingModule,
+    
   ],
   exports: [
     IndicadoresFormComponent
