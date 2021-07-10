@@ -1,74 +1,177 @@
-<h1 class="mt-4">Solicitação de Cartões</h1>
+<h1 class="mt-4">Liberação de Pedidos</h1>
 <ol class="breadcrumb mb-4">
     <li class="breadcrumb-item active" class="font-weight-bold">Atualização de dados de clientes</li>
 </ol>
 <div class="container">
     <form #clientesForm="ngForm" (ngSubmit)="onSubmit()">
-        <div class="row">
-            <div class="col-md-2">
-                <div class="form-group">
-                    <label>ID:</label>
-                    <input type="text" class="form-control" disabled="true" [(ngModel)]="clientec.id" name="id">
-                </div>
-            </div>
-            <div class="col-md-4">
-                <label>CPF:</label>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="" aria-label="Pesquisar">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
-                </form>
-            </div>
-        </div>
+
         <div class="row">
             <div class="col-md-12">
                 <div class="form-group">
                     <label>NOME:*</label>
-                    <input type="text" class="form-control" [(ngModel)]="clientec.nome" name="nome">
+                    <input type="text" class="form-control" [(ngModel)]="cliente.nome" name="nome">
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
                     <label>RG:*</label>
-                    <input type="text" class="form-control" [(ngModel)]="clientec.rg" name="rg">
+                    <input type="text" class="form-control" [(ngModel)]="cliente.rg" name="rg">
                 </div>
                 <div class="form-group">
                     <label>TEL 1:*</label>
-                    <input type="text" class="form-control" [(ngModel)]="clientec.tel1" name="tel1">
+                    <input type="text" class="form-control" [(ngModel)]="cliente.tel1" name="tel1">
                 </div>
                 <div class="form-group">
                     <label>DT NASCIMENTO:*</label>
-                    <input type="text" class="form-control" [(ngModel)]="clientec.dtNasc" name="dtNasc">
+                    <input type="text" class="form-control" [(ngModel)]="cliente.dtNasc" name="dtNasc">
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
-                    <label>TEL 2: </label>
-                    <input type="text" class="form-control" [(ngModel)]="clientec.tel2" name="tel2">
+                    <label>CPF: </label>
+                    <input type="text" class="form-control" [(ngModel)]="cliente.cpf" name="cpf">
                 </div>
                 <div class="form-group">
-                    <label>COMENTARIOS: </label>
-                    <input type="text" class="form-control" [(ngModel)]="clientec.comentarios" name="comentarios">
+                    <label>TEL 2: </label>
+                    <input type="text" class="form-control" [(ngModel)]="cliente.tel2" name="tel2">
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
                     <label>SEXO: </label>
-                    <input type="text" class="form-control" [(ngModel)]="clientec.sexo" name="sexo">
+                    <input type="text" class="form-control" [(ngModel)]="cliente.sexo" name="sexo">
                 </div>
                 <div class="form-group">
                     <label>ESTADO CIVIL : </label>
-                    <input type="text" class="form-control" [(ngModel)]="clientec.estadoCivil" name="estadoCivil">
+                    <input type="text" class="form-control" [(ngModel)]="cliente.estadoCivil" name="estadoCivil">
                 </div>
             </div>
             <div class="col-md-12">
                 <div class="form-group">
                     <label>COMENTARIOS: </label>
-                    <input type="text" class="form-control" [(ngModel)]="clientec.comentarios" name="comentarios">
+                    <input type="text" class="form-control" [(ngModel)]="cliente.comentarios" name="comentarios">
                 </div>
             </div>
         </div>
-        <button type="submit" class="btn btn-success mr-2">Salvar <i class="far fa-save"></i></button>
-        <button  class="btn btn-success ">Alterar <i class="fas fa-edit"></i></button>
-        <button type="button"  class="btn btn-dark ml-5" (click)="chamaCadastroEndereco()">Próximo <i class="fas fa-forward"></i></button>
     </form>
+</div>
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active" class="font-weight-bold">Atualização de dados de endereço</li>
+</ol>
+<div class="container">
+    <form>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label>ENDEREÇO</label>
+                    <input type="text" class="form-control" [(ngModel)]="cliente.endereco" name="endereco">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>NUMERO</label>
+                    <input type="number" class="form-control" [(ngModel)]="cliente.numero" name="numero">
+                </div>
+                <div class="form-group">
+                    <label>CIDADE</label>
+                    <input type="text" class="form-control" [(ngModel)]="cliente.cidade" name="cidade">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>COMPLEMENTO</label>
+                    <input type="text" class="form-control" [(ngModel)]="cliente.complemento" name="complemento">
+                </div>
+                <div class="form-group">
+                    <label>ESTADO</label>
+                    <input type="text" class="form-control" [(ngModel)]="cliente.estado" name="estado">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>BAIRRO</label>
+                    <input type="text" class="form-control" [(ngModel)]="cliente.bairro" name="bairro">
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active" class="font-weight-bold">Confirmação de rendas</li>
+</ol>
+<div class="container">
+    <form>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>DEPENDENTES</label>
+                    <input type="number" class="form-control" [(ngModel)]="cliente.dependentes" name="dependentes">
+                </div>
+                <div class="form-group">
+                    <label>RENDA</label>
+                    <input type="number" class="form-control" [(ngModel)]="cliente.renda" name="renda">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>PROFISSÃO</label>
+                    <input type="text" class="form-control" [(ngModel)]="cliente.profissao" name="profissao">
+                </div>
+                <div class="form-group">
+                    <label>RENDA FAMILIAR</label>
+                    <input type="number" class="form-control" [(ngModel)]="cliente.rendaFamiliar" name="rendaFamiliar">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>EMPRESA</label>
+                    <input type="text" class="form-control" [(ngModel)]="cliente.empresa" name="empresa">
+                </div>
+                <div class="form-group">
+                    <label>RENDA TOTAL</label><br>
+                    <label>VALOR TOTAL</label>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item active" class="font-weight-bold">Informações de pedido</li>
+    </ol>
+    <div class="container">
+        <form>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>DATA DO PEDIDO</label><br>
+                        <label>DATA </label>
+                    </div>
+                    <div class="form-group">
+                        <label>QUANTIDADE DE PARCELAS</label><br>
+                        <label>QTD</label>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>VALOR DO PEDIDO</label><br>
+                        <label>VALOR</label>
+                    </div>
+                    <div class="form-group">
+                        <label>SITUAÇÃO DO PEDIDO</label><br>
+                        <label>SITUAÇÃO</label>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>FORMA DE PAGAMENTO</label><br>
+                        <label>FORMA</label>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+<div>
+    <button type="submit" class="btn btn-success mr-2">Salvar <i class="fas fa-save"></i></button>
+    <button class="btn btn-success mr-2">Alterar <i class="fas fa-edit"></i></button>
+    <button class="btn btn-dark ml-4">Realizar Analise <i class="fas fa-edit"></i></button>
 </div>

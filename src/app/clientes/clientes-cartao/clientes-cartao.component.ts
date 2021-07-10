@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterLink } from '@angular/router';
-import { htmlPrefilter } from 'jquery';
 import { ClientesService } from 'src/app/clientes.service';
 import { Cliente } from '../clientes';
+
 @Component({
   selector: 'app-clientes-cartao',
   templateUrl: './clientes-cartao.component.html',
@@ -10,21 +9,20 @@ import { Cliente } from '../clientes';
 })
 export class ClientesCartaoComponent implements OnInit {
 
-  clientec: Cliente | any;
+  cliente: Cliente | any;
   
-  constructor( private service: ClientesService) { 
-    this.clientec = new Cliente();
+  constructor( private service: ClientesService ) { 
+    this.cliente = new Cliente();
   }
 
   ngOnInit(): void {
   }
   
   onSubmit(){
-    this.service.salvar(this.clientec).subscribe(response =>{
+    this.service.salvar(this.cliente).subscribe(response =>{
       console.log(response);
     })
   }
-  chamaRendas(){
-    window.location.href="rendas-form";
-  }
+ 
+
 }

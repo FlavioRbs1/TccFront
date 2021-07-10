@@ -12,13 +12,6 @@ import { UsuariosModule } from './usuarios/usuarios.module';
 import { HistoricoModule } from './historico/historico.module';
 import { IndicadoresModule } from './indicadores/indicadores.module';
 import { ClientesService } from './clientes.service';
-import { RendasModule } from './rendas/rendas.module';
-import { EnderecosModule } from './enderecos/enderecos.module';
-import { EnderecosService } from './enderecos.service';
-
-
-
-
 
 @NgModule({
   declarations: [
@@ -35,13 +28,10 @@ import { EnderecosService } from './enderecos.service';
     ConfiguracaoModule,
     UsuariosModule,
     HistoricoModule,
-    IndicadoresModule,
-    RendasModule,
-    EnderecosModule
+    IndicadoresModule
   ],
   providers: [
-    ClientesService,
-    EnderecosService
+    ClientesService
   ],
   bootstrap: [AppComponent]
 })

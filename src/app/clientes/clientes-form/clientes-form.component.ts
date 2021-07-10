@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ClientesService } from 'src/app/clientes.service';
-import { Cliente} from '../clientes'
+import { Cliente} from '../clientes';
+
+
 @Component({
   selector: 'app-clientes-form',
   templateUrl: './clientes-form.component.html',
@@ -8,27 +10,19 @@ import { Cliente} from '../clientes'
 })
 export class ClientesFormComponent implements OnInit {
 
-  clientec: Cliente |any;
+  cliente: Cliente |any;
 
   constructor(private service:ClientesService) {
-    this.clientec = new Cliente();
-   }
+ 
+  }
 
   ngOnInit(): void {
   }
 
   onSubmit(){
-    this.service.salvar(this.clientec).subscribe(response =>{
-      console.log(response);
+    this.service.salvar(this.cliente).subscribe(response =>{
+      console.log(this.cliente);
+      
     })
   }
-  alteraCadastroCliente(){
-    this.service.alterar(this.clientec).subscribe(response =>{
-      console.log(response);
-    })
-  }
-  chamaCadastroEndereco(){
-    window.location.href=("enderecos-form")
-  }
-
 }
