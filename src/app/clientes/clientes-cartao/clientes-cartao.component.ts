@@ -11,9 +11,7 @@ export class ClientesCartaoComponent implements OnInit {
 
   cliente: Cliente | any;
   
-  constructor( private service: ClientesService ) { 
-    this.cliente = new Cliente();
-  }
+  constructor( private service: ClientesService ) { }
 
   ngOnInit(): void {
   }
