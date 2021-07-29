@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
+  corSideBar = "sb-sidenav-dark";
   constructor() { }
 
   ngOnInit(): void {

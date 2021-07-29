@@ -12,6 +12,8 @@ import { UsuariosModule } from './usuarios/usuarios.module';
 import { HistoricoModule } from './historico/historico.module';
 import { IndicadoresModule } from './indicadores/indicadores.module';
 import { ClientesService } from './clientes.service';
+import { PedidoModule } from './pedido/pedido.module';
+import { AnaliseModule } from './analise/analise.module';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,10 @@ import { ClientesService } from './clientes.service';
     ConfiguracaoModule,
     UsuariosModule,
     HistoricoModule,
-    IndicadoresModule
+    IndicadoresModule,
+    PedidoModule,
+    AnaliseModule
+    
   ],
   providers: [
     ClientesService

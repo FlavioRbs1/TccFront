@@ -21,4 +21,5 @@ export class Cliente{
     sexo: string | any ;
     tel1: string | any ;
     tel2: string | any;   
+
 }

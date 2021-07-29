@@ -3,12 +3,12 @@
     <li class="breadcrumb-item active" class="font-weight-bold">Atualização de dados de clientes</li>
 </ol>
 <div class="container">
-    <form #clientesForm="ngForm" (ngSubmit)="onSubmit()">
+    <form #clienteForm="ngForm" (ngSubmit)="onSubmit()">
         <div class="row">
             <div class="col-md-12">
                 <div class="form-group">
                     <label>NOME:*</label>
-                    <input type="text" class="form-control" [(ngModel)]="cliente.nome" name="nome">
+                    <input type="text" class="form-control" [ngModel]="cliente.nome" name="nome" >
                 </div>
             </div>
             <div class="col-md-4">
@@ -20,15 +20,11 @@
                     <label>TEL 1:*</label>
                     <input type="text" class="form-control" [(ngModel)]="cliente.tel1" name="tel1">
                 </div>
-                <div class="form-group">
-                    <label>DT NASCIMENTO:*</label>
-                    <input type="text" class="form-control" [(ngModel)]="cliente.dtNasc" name="dtNasc">
-                </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
-                    <label>CPF: </label>
-                    <input type="text" class="form-control" [(ngModel)]="cliente.cpf" name="cpf">
+                    <label>DT NASCIMENTO:*</label>
+                    <input type="text" class="form-control" [(ngModel)]="cliente.dtNasc" name="dtNasc">
                 </div>
                 <div class="form-group">
                     <label>TEL 2: </label>
@@ -103,7 +99,7 @@
                     </div>
                     <div class="form-group">
                         <label>RENDA</label>
-                        <input type="number" class="form-control" [(ngModel)]="cliente.renda" name="renda">
+                        <input type="number" class="form-control" [(ngModel)]="cliente.renda" name="renda" onratechange="CalculaRenda()">
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -113,8 +109,7 @@
                     </div>
                     <div class="form-group">
                         <label>RENDA FAMILIAR</label>
-                        <input type="number" class="form-control" [(ngModel)]="cliente.rendaFamiliar"
-                            name="rendaFamiliar">
+                        <input type="number" class="form-control" [(ngModel)]="cliente.rendaFamiliar" onratechange="CalculaRenda()" name="rendaFamiliar">
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -124,47 +119,14 @@
                     </div>
                     <div class="form-group">
                         <label>RENDA TOTAL</label><br>
-                        <label>VALOR TOTAL</label>
+                        <label > {{ cliente.rendaTotal }}</label>
                     </div>
                 </div>
             </div>
         </div>
-        <ol class="breadcrumb mb-4">
-            <li class="breadcrumb-item active" class="font-weight-bold">Informações de pedido</li>
-        </ol>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <label>DATA DO PEDIDO</label><br>
-                        <label>DATA </label>
-                    </div>
-                    <div class="form-group">
-                        <label>QUANTIDADE DE PARCELAS</label><br>
-                        <label>QTD</label>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <label>VALOR DO PEDIDO</label><br>
-                        <label>VALOR</label>
-                    </div>
-                    <div class="form-group">
-                        <label>SITUAÇÃO DO PEDIDO</label><br>
-                        <label>SITUAÇÃO</label>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <label>FORMA DE PAGAMENTO</label><br>
-                        <label>FORMA</label>
-                    </div>
-                </div>
-            </div>
-        </div>
+       
         <div>
-            <button type="submit" class="btn btn-success mr-2">Salvar <i class="fas fa-save"></i></button>
-            <button class="btn btn-success mr-2">Alterar <i class="fas fa-edit"></i></button>
+            <button type="submit" class="btn btn-success mr-2">Salvar Alteração <i class="fas fa-save"></i></button>
             <button class="btn btn-dark ml-4">Realizar Analise <i class="fas fa-edit"></i></button>
         </div>
     </form>
