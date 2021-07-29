@@ -1,6 +1,6 @@
-<h1 class="mt-4">Liberação de Pedidos</h1>
+<h1 class="mt-4">Clientes Fidelizados</h1>
 <ol class="breadcrumb mb-4">
-    <li class="breadcrumb-item active" class="font-weight-bold">Atualização de dados de clientes</li>
+    <li class="breadcrumb-item active" class="font-weight-bold">Liberação de crédito para clientes fidelizados</li>
 </ol>
 <div class="container">
     <form #clienteForm="ngForm" (ngSubmit)="onSubmit()">
@@ -127,7 +127,7 @@
        
         <div>
             <button type="submit" class="btn btn-success mr-2">Salvar Alteração <i class="fas fa-save"></i></button>
-            <button class="btn btn-dark ml-4">Realizar Analise <i class="fas fa-edit"></i></button>
+            <button class="btn btn-dark ml-4" routerLink='/analise-form'>Realizar Analise <i class="fas fa-edit"></i></button>
         </div>
     </form>
 </div>

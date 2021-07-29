@@ -9,12 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AnaliseFormComponent implements OnInit {
 
-  
+  data: Date|any
   constructor() {
-    
+    this.data = new Date();
    }
 
   ngOnInit(): void {
+    
   }
  
 Alertar(){
@@ -23,5 +24,6 @@ Alertar(){
   while(justificativa = ""){
     justificativa=prompt("O CRÉDITO NÃO FOI LIBERADO PARA O CLIENTE, POR FAVOR JUSTIFIQUE SUA AUTORIZAÇÃO DE LIBERAÇÃO DO VALOR");
   }
+
 }
 }
