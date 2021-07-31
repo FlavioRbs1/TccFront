@@ -10,19 +10,23 @@ import { Cliente } from '../clientes';
 export class ClientesCartaoComponent implements OnInit {
 
   cliente: Cliente | any;
-  
+  situacao: String ="";
+
   constructor( private service: ClientesService ) {
     this.cliente = new Cliente();
+    
    }
 
   ngOnInit(): void {
+    
   }
   
   onSubmit(){
     this.service.salvar(this.cliente).subscribe(response =>{
       console.log(response);
-    })
+      window.location.href="/analise-form";
+    });
+
   }
-
-
+  
 }

@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConfiguracaoFormComponent implements OnInit {
 
+  cor:String | any;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  cores(valor:number){
+ 
+  }
 }

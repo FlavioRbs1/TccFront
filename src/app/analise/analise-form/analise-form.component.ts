@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Cliente } from 'src/app/clientes/clientes';
 
 
 @Component({
@@ -9,9 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AnaliseFormComponent implements OnInit {
 
-  data: Date|any
+  data: Date|any;
+  cliente: Cliente|any;
+  id:number|any;
   constructor() {
-    this.data = new Date();
+    
    }
 
   ngOnInit(): void {

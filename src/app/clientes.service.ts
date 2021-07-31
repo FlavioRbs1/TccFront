@@ -21,5 +21,7 @@ export class ClientesService {
   getByCpf(cpf: string):Observable<Cliente>{
     return this.http.get<any>(`http://localhost:8080/api/cliente/busca/${cpf}`);
   }
-
+  alterar(cliente:Cliente):Observable<any>{
+    return this.http.put<Cliente>(`http://localhost:8080/api/cliente/busca/${cliente.cpf}`,cliente);
+  }
 }

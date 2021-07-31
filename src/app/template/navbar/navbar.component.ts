@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ConfiguracaoFormComponent} from '../../configuracao/configuracao-form/configuracao-form.component'
 
 @Component({
   selector: 'app-navbar',
@@ -7,12 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
+  
   corNav:String = "navbar-dark"
   tonalidadeNav = "bg-dark"
-  
-  constructor() { }
+  cor:String|any
+
+  constructor() { 
+    
+  }
 
   ngOnInit(): void {
   }
+
+
+
 
 }

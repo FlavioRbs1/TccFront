@@ -21,6 +21,9 @@ export class ClientesFormComponent implements OnInit {
   clientes: Cliente[] = [];
   renda:number|any;
   rendaFamiliar:number|any;
+  success:Boolean = false;
+  errors:String | any;
+
 
   constructor(
     private service: ClientesService,
@@ -43,10 +46,13 @@ export class ClientesFormComponent implements OnInit {
 
 
   onSubmit() {
-    this.service.salvar(this.cliente).subscribe(response =>{
-      console.log(response);
-    })
+    this.service.alterar(this.cliente)
+    .subscribe(response =>{
+      this.success = true;
+      this.errors = null;
+    }, errorResponse =>{this.errors = ['Erro ao atualizar o cliente.']})
   }
+  
 
   CalculaRenda(){
     let rendaTotal = this.renda + this.rendaFamiliar;
