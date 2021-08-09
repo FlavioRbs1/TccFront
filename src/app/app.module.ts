@@ -14,6 +14,7 @@ import { IndicadoresModule } from './indicadores/indicadores.module';
 import { ClientesService } from './clientes.service';
 import { PedidoModule } from './pedido/pedido.module';
 import { AnaliseModule } from './analise/analise.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,9 @@ import { AnaliseModule } from './analise/analise.module';
     HistoricoModule,
     IndicadoresModule,
     PedidoModule,
-    AnaliseModule
+    AnaliseModule,
+    FormsModule,
+    ReactiveFormsModule
     
   ],
   providers: [

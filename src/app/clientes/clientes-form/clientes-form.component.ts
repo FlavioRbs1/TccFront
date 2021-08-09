@@ -50,13 +50,14 @@ export class ClientesFormComponent implements OnInit {
     .subscribe(response =>{
       this.success = true;
       this.errors = null;
-    }, errorResponse =>{this.errors = ['Erro ao atualizar o cliente.']})
+    }, errorResponse =>{this.errors = ['Erro ao atualizar o cliente.']})//Tratar o erro  como resposta
+    if(this.success = true){
+      alert('cliente atualizado com sucesso') 
   }
+}
   
 
-  CalculaRenda(){
-    let rendaTotal = this.renda + this.rendaFamiliar;
-  }
+  
 
 
 }
