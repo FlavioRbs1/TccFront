@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Metricas } from './metricas/metricas';
+import { Metricas } from '../metricas/metricas';
 
 @Injectable({
   providedIn: 'root'

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Metricas } from 'src/app/metricas/metricas';
+
 
 @Component({
   selector: 'app-sidebar',
@@ -7,10 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
-  corSideBar = "sb-sidenav-dark";
-  constructor() { }
 
-  ngOnInit(): void {
+  constructor() { 
+    
   }
-
+  
+  ngOnInit(): void {
+    
+  }
+  
+ 
+  
 }

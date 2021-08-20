@@ -1,7 +1,7 @@
 import { HttpErrorResponse, HttpParams } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ClientesService } from 'src/app/clientes.service';
+import { ClientesService } from 'src/app/clientes/clientes.service';
 import { Cliente } from '../clientes';
 import { Params, Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router'

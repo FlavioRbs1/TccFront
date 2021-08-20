@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { MetricasService } from 'src/app/metricas.service';
+import { HttpErrorResponse, HttpParams } from '@angular/common/http';
+import { MetricasService } from '../metricas.service';
 import { Metricas } from '../metricas';
-import { FormBuilder, FormGroup, FormsModule } from '@angular/forms'
 import { Observable } from 'rxjs';
-import { Params } from '@angular/router';
+import { Params, Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
+import { param } from 'jquery';
+import { Opcoes  } from '../opcoes'
+
 
 @Component({
   selector: 'app-metricas-form',
@@ -13,70 +16,53 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class MetricasFormComponent implements OnInit {
 
-  formulario: FormGroup | any;
-  metrica: Metricas | any;
-  resposta: any;
+  metrica: Metricas|any;
+  analiseCpf:Metricas|any;
+  analiseEstCivil:Metricas|any;
+  analiseIdade:Metricas|any;
+  analiseRenda:Metricas|any;
+  analisePercEndiv:Metricas|any;
+  libAutomatica:Metricas|any;
   id: number | any;
-  analiseCpf: Boolean | any;
-  analiseEstCivil: Boolean | any;
-  analiseIdade: Boolean | any;
-  analiseProfissao: Boolean | any;
-  analiseRenda: Boolean | any;
-  analisePercEndiv: Boolean | any;
-  libAutomatica: Boolean | any;
-  classVermelho: number | any;
-  classAmarelo: number | any;
-  classVerde: number | any;
-  classAzul: number | any;
-  limiteCredito: number | any;
-  percentual: number | any;
-
+  errors:String | any;
+  response:any;
+  success:Boolean = false;
+  opcoes: Opcoes[] = [
+    {id: 1, opcao:'Ativado'},
+    {id: 2, opcao:'Desativado'}
+  ];
+  
+  
   constructor(
-    private fb: FormBuilder, private service: MetricasService, private activatedRoute: ActivatedRoute
-  ) {
-
-  }
+    private service:MetricasService, private activatedRoute: ActivatedRoute,
+    private router: Router )
+    {
+    this.metrica = new Metricas();
+    this.analiseCpf = new Metricas();
+    }
 
   ngOnInit(): void {
-    this.formulario = this.fb.group({
-      analiseCpf: [''],
-      analiseEstCivil: [''],
-      analiseIdade: [''],
-      analiseProfissao: [''],
-      analiseRenda: [''],
-      analisePercEndiv: [''],
-      libAutomatica: [''],
-      classVermelho: [''],
-      classAmarelo: [''],
-      classVerde: [''],
-      classAzul: [''],
-      limiteCredito: [''],
-      percentual: ['']
-
-    })
-    let params: Observable<Params> = this.activatedRoute.params
-    params.subscribe(urlParams => {
-      this.id = urlParams['id']
-      if (this.id) {
-        this.service.getById(this.id).subscribe(
-          response => this.metrica = response, errorResponse => this.metrica = new Metricas(this.analiseCpf = this.formulario.analiseCpf, this.analiseEstCivil,
-            this.analiseIdade, this.analisePercEndiv, this.analiseProfissao,
-            this.analiseRenda, this.classAmarelo, this.classAzul= this.formulario.classAzul , this.classVerde,
-            this.classVermelho, this.libAutomatica, this.limiteCredito = this.formulario.limiteCredito, this.percentual)
-        )
-      }
-    })
+     let params: Observable<Params> = this.activatedRoute.params
+     params.subscribe(urlParams => {
+       this.id = urlParams['id']
+       if(this.id){
+         this.service.getById(this.id).subscribe(
+           response => this.metrica = response,errorResponse => this.metrica = new Metricas()
+         )
+       }
+     })
+     console.log(this.metrica.analiseCpf, this.analiseCpf);
   }
 
-  submit() {
-    const formValues = this.formulario.value;
-    const metrica: Metricas = new Metricas(formValues.analiseCpf, formValues.analiseEstCivil,
-      formValues.analiseIdade, formValues.analisePercEndiv, formValues.analiseProfissao,
-      formValues.analiseRenda, formValues.classAmarelo, formValues.classAzul, formValues.classVerde,
-      formValues.classVermelho, formValues.libAutomatica, formValues.limiteCredito, formValues.percentual);
-    this.service.alterar(metrica).subscribe((response: Metricas) => {
-      this.metrica.id;
-      console.log(metrica);
-    });
+  onSubmit(){
+    console.log(this.metrica);
+    this.service.alterar(this.metrica)
+    .subscribe(response =>{
+      this.success = true;
+      this.errors = null;
+    }, errorResponse =>{ this.errors =['Erro ao atualizar o cliente.']})
+    if(this.success = true){
+      alert('Metrica atualizada com sucesso')
+    }
   }
 }

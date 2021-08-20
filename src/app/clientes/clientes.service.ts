@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Cliente } from './clientes/clientes';
+import { Cliente } from '../clientes/clientes';
 import { HttpClient, HttpClientModule, HttpParams} from '@angular/common/http'
 import { Observable } from 'rxjs';
 import { post } from 'jquery';
-import { Pedido } from './pedido/pedido';
+import { Pedido } from '../pedido/pedido';
 @Injectable({
   providedIn: 'root'
 })

@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { UsuariosRoutingModule } from './usuarios-routing.module';
 import { UsuariosFormComponent } from './usuarios-form/usuarios-form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -11,10 +11,13 @@ import { UsuariosFormComponent } from './usuarios-form/usuarios-form.component';
   ],
   imports: [
     CommonModule,
-    UsuariosRoutingModule
+    FormsModule,
+    ReactiveFormsModule,
+    UsuariosRoutingModule 
   ],
   exports: [
-    UsuariosFormComponent
+    UsuariosFormComponent,
+    ReactiveFormsModule
   ]
 })
 export class UsuariosModule { }

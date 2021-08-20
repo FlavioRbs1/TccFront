@@ -11,10 +11,12 @@ import { ConfiguracaoModule } from './configuracao/configuracao.module';
 import { UsuariosModule } from './usuarios/usuarios.module';
 import { HistoricoModule } from './historico/historico.module';
 import { IndicadoresModule } from './indicadores/indicadores.module';
-import { ClientesService } from './clientes.service';
+import { ClientesService } from './clientes/clientes.service';
 import { PedidoModule } from './pedido/pedido.module';
 import { AnaliseModule } from './analise/analise.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MetricasService } from './metricas/metricas.service';
+import { UsuariosService } from './usuarios/usuarios.service';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     
   ],
   providers: [
-    ClientesService
+    ClientesService,
+    MetricasService,
+    UsuariosService
   ],
   bootstrap: [AppComponent]
 })
