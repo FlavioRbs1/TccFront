@@ -12,8 +12,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     MetricasRoutingModule,
-    FormsModule, 
-    ReactiveFormsModule
+    FormsModule
   ],
   exports:[
     MetricasFormComponent

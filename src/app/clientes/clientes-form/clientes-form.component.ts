@@ -6,6 +6,8 @@ import { Cliente } from '../clientes';
 import { Params, Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router'
 import { param } from 'jquery';
+import { Analise } from 'src/app/analise/analise';
+import { AnaliseService } from 'src/app/analise/analise.service';
 
 
 @Component({
@@ -16,20 +18,27 @@ import { param } from 'jquery';
 export class ClientesFormComponent implements OnInit {
 
   cliente: Cliente | any;
-  id: number | any;
   cpf: string | any;
+  id: number|any;
   clientes: Cliente[] = [];
   renda:number|any;
   rendaFamiliar:number|any;
   success:Boolean = false;
   errors:String | any;
+  analise:Analise|any;
+  
+ 
 
 
   constructor(
     private service: ClientesService,
+    private analiseService:AnaliseService,
     private activatedRoute: ActivatedRoute,
     private router: Router) {
-    this.cliente = new Cliente();
+    this.cliente = new Cliente();   
+    this.analise = new Analise();
+    
+  
   }
 
   ngOnInit(): void {
@@ -43,21 +52,14 @@ export class ClientesFormComponent implements OnInit {
       }
     })
   }
-
-
-  onSubmit() {
+  
+  onSubmit(){
     this.service.alterar(this.cliente)
     .subscribe(response =>{
-      this.success = true;
-      this.errors = null;
-    }, errorResponse =>{this.errors = ['Erro ao atualizar o cliente.']})//Tratar o erro  como resposta
-    if(this.success = true){
-      alert('cliente atualizado com sucesso') 
+      console.log(this.cliente);
+    }); 
   }
-}
-  
 
-  
 
 
 }

@@ -17,11 +17,13 @@ import { AnaliseModule } from './analise/analise.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MetricasService } from './metricas/metricas.service';
 import { UsuariosService } from './usuarios/usuarios.service';
+import { AnaliseCreateComponent } from './analise/analise-create/analise-create.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    AnaliseCreateComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +39,8 @@ import { UsuariosService } from './usuarios/usuarios.service';
     PedidoModule,
     AnaliseModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
     
   ],
   providers: [

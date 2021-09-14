@@ -1,20 +1,18 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params, Router } from '@angular/router';
+import { ActivatedRoute, Data, Params, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Cliente } from 'src/app/clientes/clientes';
 import { ClientesService } from 'src/app/clientes/clientes.service';
 import { Analise } from '../analise';
 import { AnaliseService } from '../analise.service';
 
-
 @Component({
-  selector: 'app-analise',
-  templateUrl: './analise-form.component.html',
-  styleUrls: ['./analise-form.component.css'],
-
+  selector: 'app-analise-create',
+  templateUrl: './analise-create.component.html',
+  styleUrls: ['./analise-create.component.css']
 })
-export class AnaliseFormComponent implements OnInit {
+export class AnaliseCreateComponent implements OnInit {
 
   data: Date | any;
   cpf: Cliente | any;
@@ -24,20 +22,24 @@ export class AnaliseFormComponent implements OnInit {
   cliente: number | any;
   errors:string[]=[];
   success:boolean=false;
+  analiseCpf: number = 0;
+  analisePendencias: number = 0;
+  analiseIdade: number = 0;
+  analisePerc: number = 0;
+  analiseProfissao: number = 0;
+  analiseRenda: number = 0;
+  concessao: string | any;
+  dataAnalise: Data | any;
+  situacao: string = "";
   
-
   constructor(
     private http: HttpClient,
     private activatedRoute: ActivatedRoute,
     private clienteService: ClientesService,
     private service: AnaliseService,
-    private router: Router) {
+    private router: Router
+  ) { }
 
-    this.analise = new Analise();
-    
-    
-  }
-  
   ngOnInit(): void {
     let params: Observable<Params> = this.activatedRoute.params
     params.subscribe(urlParams => {
@@ -50,9 +52,16 @@ export class AnaliseFormComponent implements OnInit {
       })
       this.analise.nome = this.cliente.nome;
       this.analise.cliente = this.cliente.id;
-      
   }
 
-  onSubmit() {     
+  onSubmit() {
+    console.log(this.analise)
+    console.log(this.cliente)
+    this.service.criaAnalise(this.analise)
+      .subscribe(response => {
+        console.log(this.analise)
+      });
+     
   }
+
 }

@@ -4,7 +4,9 @@ import { AnaliseFormComponent } from './analise-form/analise-form.component';
 import { Routes, RouterModule, Router } from '@angular/router';
 
 const routes: Routes =[
-  {path: 'analise-form',component:AnaliseFormComponent}
+  {path: 'analise-form',component:AnaliseFormComponent},
+  {path: 'analise-create/:id',component:AnaliseFormComponent},
+  {path: 'analise-form/:id', component:AnaliseFormComponent}
 ];
 
 @NgModule({

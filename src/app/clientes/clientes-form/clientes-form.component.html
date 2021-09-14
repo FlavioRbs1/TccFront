@@ -3,7 +3,7 @@
     <li class="breadcrumb-item active" class="font-weight-bold">Liberação de crédito para clientes fidelizados</li>
 </ol>
 <div class="container">
-    <form #clienteForm="ngForm" (ngSubmit)="onSubmit()">
+    <form #form="ngForm" (ngSubmit)="onSubmit()">
         <div class="row">
             <div class="col-md-12">
                 <div class="form-group">
@@ -14,37 +14,37 @@
             <div class="col-md-4">
                 <div class="form-group">
                     <label>RG:*</label>
-                    <input type="text" class="form-control" [(ngModel)]="cliente.rg" name="rg">
+                    <input type="text" class="form-control"  [(ngModel)]="cliente.rg" name="rg">
                 </div>
                 <div class="form-group">
                     <label>TEL 1:*</label>
-                    <input type="text" class="form-control" [(ngModel)]="cliente.tel1" name="tel1">
+                    <input type="text" class="form-control"  [(ngModel)]="cliente.tel1" name="tel1">
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
                     <label>DT NASCIMENTO:*</label>
-                    <input type="text" class="form-control" [(ngModel)]="cliente.dtNasc" name="dtNasc">
+                    <input type="text" class="form-control"  [(ngModel)]="cliente.dtNasc" name="dtNasc">
                 </div>
                 <div class="form-group">
                     <label>TEL 2: </label>
-                    <input type="text" class="form-control" [(ngModel)]="cliente.tel2" name="tel2">
+                    <input type="text" class="form-control"  [(ngModel)]="cliente.tel2" name="tel2">
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
                     <label>SEXO: </label>
-                    <input type="text" class="form-control" [(ngModel)]="cliente.sexo" name="sexo">
+                    <input type="text" class="form-control"  [(ngModel)]="cliente.sexo" name="sexo">
                 </div>
                 <div class="form-group">
                     <label>ESTADO CIVIL : </label>
-                    <input type="text" class="form-control" [(ngModel)]="cliente.estadoCivil" name="estadoCivil">
+                    <input type="text" class="form-control"  [(ngModel)]="cliente.estadoCivil" name="estadoCivil">
                 </div>
             </div>
             <div class="col-md-12">
                 <div class="form-group">
                     <label>COMENTARIOS: </label>
-                    <input type="text" class="form-control" [(ngModel)]="cliente.comentarios" name="comentarios">
+                    <input type="text" class="form-control"  [(ngModel)]="cliente.comentarios" name="comentarios">
                 </div>
             </div>
         </div>
@@ -56,13 +56,13 @@
                 <div class="col-md-12">
                     <div class="form-group">
                         <label>ENDEREÇO</label>
-                        <input type="text" class="form-control" [(ngModel)]="cliente.endereco" name="endereco">
+                        <input type="text" class="form-control"  [(ngModel)]="cliente.endereco" name="endereco">
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
                         <label>NUMERO</label>
-                        <input type="number" class="form-control" [(ngModel)]="cliente.numero" name="numero">
+                        <input type="number" class="form-control"  [(ngModel)]="cliente.numero" name="numero">
                     </div>
                     <div class="form-group">
                         <label>CIDADE</label>
@@ -76,13 +76,13 @@
                     </div>
                     <div class="form-group">
                         <label>ESTADO</label>
-                        <input type="text" class="form-control" [(ngModel)]="cliente.estado" name="estado">
+                        <input type="text" class="form-control"  [(ngModel)]="cliente.estado" name="estado">
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
                         <label>BAIRRO</label>
-                        <input type="text" class="form-control" [(ngModel)]="cliente.bairro" name="bairro">
+                        <input type="text" class="form-control"  [(ngModel)]="cliente.bairro" name="bairro">
                     </div>
                 </div>
             </div>
@@ -126,8 +126,7 @@
         </div>
        
         <div>
-            <button type="submit" class="btn btn-success mr-2">Salvar Alteração <i class="fas fa-save"></i></button>
-            <button class="btn btn-dark ml-4" routerLink='/analise-form'>Realizar Analise <i class="fas fa-edit"></i></button>
+            <button type="submit" class="btn btn-success mr-2" routerLink="/analise-create/{{cliente.id}}" >Atualizar/Confirmar <i class="fas fa-save"></i></button>
         </div>
     </form>
 </div>

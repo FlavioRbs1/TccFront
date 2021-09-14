@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { AnaliseFormComponent  } from './analise-form/analise-form.component';
 import { AnaliseRoutingModule } from './analise-routing.module';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -13,7 +14,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     AnaliseRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   exports:[
     AnaliseFormComponent

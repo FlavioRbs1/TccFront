@@ -3,38 +3,49 @@
   <li class="breadcrumb-item active" class="font-weight-bold">Criação de usuários</li>
 </ol>
 <div class="container">
-  <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+  <form #usuariosForm="ngForm" (ngSubmit)="onSubmit()">
     <div class="row">
       <div class="col-md-4">
-        <div class="form-group">
+        <div >
           <label>NOME:</label>
-          <input type="text" formControlName="user" class="ml-2">
+          <input type="text" [(ngModel)]="usuario.user" class="form-control" name="user" class="ml-2">
         </div>
-        <div class="form-group">
+        <div >
           <label>LOGIN:</label>
-          <input type="text"  formControlName="login" class="ml-2" >
+          <input type="text" [(ngModel)]="usuario.login" class="form-control"  name="login" class="ml-2" >
         </div>
-        <div class="form-group">
+        <div >
           <label>SENHA:</label>
-          <input type="text"  formControlName="senha" class="ml-2" >
+          <input type="password" [(ngModel)]="usuario.senha" class="form-control" name="senha" class="ml-2" >
         </div>
         <br>
-        <h4>Tipo de usuário</h4><br>
-        <div   >
-          <select formControlName="tipoUser">
-            <option>Usuário</option>
-            <option>Gestor</option>
-            <option>Administrador</option>
-          </select>
-        </div>
-        <br>
-        <h4>Situação</h4><br>
-        <div>
-          <select formControlName="situacao">
-            <option>Bloqueado</option>
-            <option>Gestor</option>
-            <option>Administrador</option>
-          </select>
+        <div class="row">
+          <div class="col-md-4 mr-4">
+            <h6>Tipo</h6><br>
+            <div>
+              <select>
+                <option>Usuário</option>
+                <option>Gestor</option>
+                <option>Administrador</option>
+              </select>
+            </div>
+            <br>
+          </div>
+          <div class="col-md-4 ">
+            <h6>Situação</h6><br>
+            <div>
+              <select>
+                <option>Bloqueado</option>
+                <option>Liberado</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-4 ">
+            <h6>Data Inicio</h6>
+            <div>
+              <input type="date" [(ngModel)]="usuario.cadastroUser">
+            </div>
+          </div>
         </div>
       </div>
     </div>

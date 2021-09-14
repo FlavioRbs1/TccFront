@@ -17,12 +17,6 @@ import { Opcoes  } from '../opcoes'
 export class MetricasFormComponent implements OnInit {
 
   metrica: Metricas|any;
-  analiseCpf:Metricas|any;
-  analiseEstCivil:Metricas|any;
-  analiseIdade:Metricas|any;
-  analiseRenda:Metricas|any;
-  analisePercEndiv:Metricas|any;
-  libAutomatica:Metricas|any;
   id: number | any;
   errors:String | any;
   response:any;
@@ -34,11 +28,11 @@ export class MetricasFormComponent implements OnInit {
   
   
   constructor(
-    private service:MetricasService, private activatedRoute: ActivatedRoute,
+    private service:MetricasService, 
+    private activatedRoute: ActivatedRoute,
     private router: Router )
     {
     this.metrica = new Metricas();
-    this.analiseCpf = new Metricas();
     }
 
   ngOnInit(): void {
@@ -51,7 +45,6 @@ export class MetricasFormComponent implements OnInit {
          )
        }
      })
-     console.log(this.metrica.analiseCpf, this.analiseCpf);
   }
 
   onSubmit(){

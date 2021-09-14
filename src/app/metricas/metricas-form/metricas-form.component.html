@@ -12,39 +12,38 @@
       <p>Parametrize os riscos de acordo com a quantidade de compra realizada</p>
       <div class="ml-4">
         <div class="row mr-4">
-          <div class="p-2 mb-2 bg-danger text-white"><input  type="number" [(ngModel)]="metrica.classVermelho" name="classVermelho" class="form-control"></div><br>
+          <div class="p-2 mb-2 bg-danger text-white"><input  type="number" [(ngModel)]="metrica.cpfVermelho" name="cpfVermelho" class="form-control"></div><br>
         </div>
         <div class="row">
-          <div class="p-2 mb-2 bg-warning text-dark"><input  type="number" [(ngModel)]="metrica.classAmarelo" name="classAmarelo" class="form-control"></div><br>
+          <div class="p-2 mb-2 bg-warning text-dark"><input  type="number" [(ngModel)]="metrica.cpfAmarelo" name="cpfAmarelo" class="form-control"></div><br>
         </div>
       </div>
       <div>
         <div class="row ">
-          <div class="p-2 mb-2 bg-success text-white"><input  type="number" [(ngModel)]="metrica.classVermelho" name="classVermelho" class="form-control"></div><br>
+          <div class="p-2 mb-2 bg-success text-white"><input  type="number" [(ngModel)]="metrica.cpfVerde" name="cpfVerde" class="form-control"></div><br>
         </div>
         <div class="row">
-          <div class="p-2 mb-2 bg-primary text-dark"><input  type="number" [(ngModel)]="metrica.classAmarelo" name="classAmarelo" class="form-control"></div><br>
+          <div class="p-2 mb-2 bg-primary text-dark"><input  type="number" [(ngModel)]="metrica.cpfAzul" name="cpfAzul" class="form-control"></div><br>
         </div>
       </div>
     </ol>
     <ol class="breadcrumb mb-4">
       <li class="breadcrumb-item active">Analise por Idade</li><br>
-     
       <p>Parametrize abaixo as idades consideradas de risco conforme política da empresa</p>
         <div class="ml-4">
           <div class="row mr-4">
-            <div class="p-2 mb-2 bg-danger text-white"><input  type="number" [(ngModel)]="metrica.classVermelho" name="classVermelho" class="form-control"></div><br>
+            <div class="p-2 mb-2 bg-danger text-white"><input  type="number" [(ngModel)]="metrica.idadeVermelho" name="idadeVermelho" class="form-control"></div><br>
           </div>
           <div class="row">
-            <div class="p-2 mb-2 bg-warning text-dark"><input  type="number" [(ngModel)]="metrica.classAmarelo" name="classAmarelo" class="form-control"></div><br>
+            <div class="p-2 mb-2 bg-warning text-dark"><input  type="number" [(ngModel)]="metrica.idadeAmarelo" name="idadeAmarelo" class="form-control"></div><br>
           </div>
         </div>
         <div>
           <div class="row ">
-            <div class="p-2 mb-2 bg-success text-white"><input  type="number" [(ngModel)]="metrica.classVermelho" name="classVermelho" class="form-control"></div><br>
+            <div class="p-2 mb-2 bg-success text-white"><input  type="number" [(ngModel)]="metrica.idadeVerde" name="idadeVerde" class="form-control"></div><br>
           </div>
           <div class="row">
-            <div class="p-2 mb-2 bg-primary text-dark"><input  type="number" [(ngModel)]="metrica.classAmarelo" name="classAmarelo" class="form-control"></div><br>
+            <div class="p-2 mb-2 bg-primary text-dark"><input  type="number" [(ngModel)]="metrica.idadeAzul" name="idadeAzul" class="form-control"></div><br>
           </div>
         </div>
       </ol>
@@ -65,14 +64,14 @@
   <div class="col-md-6">
     <ol class="breadcrumb mb-4">
       <li class="breadcrumb-item active">Analise Compra em aberto</li>
-      <p>Nesta analise o sistema verificará se o cpf possui compras em aberto na instituição</p>
+      <p>Nesta analise o sistema verificará se ewxiste compra fora do prazo de vencimento na instituição</p>
       <p>Parametrize a quantidade de pedidos em aberto que será considerado de baixo risco (AZUL) e alto risco (VERMELHO)</p>
       <div class="ml-5">
         <div class="row ">
-          <div class="p-2 mb-2 bg-danger text-white"><input  type="number" [(ngModel)]="metrica.classVermelho" name="classVermelho" class="form-control"></div><br>
+          <div class="p-2 mb-2 bg-danger text-white"><input  type="number" [(ngModel)]="metrica.comprasAbertoVermelho" name="comprasAbertoVermelho" class="form-control"></div><br>
         </div>
         <div class="row">
-          <div class="p-2 mb-2 bg-primary text-dark"><input  type="number" [(ngModel)]="metrica.classAmarelo" name="classAmarelo" class="form-control"></div><br>
+          <div class="p-2 mb-2 bg-primary text-dark"><input  type="number" [(ngModel)]="metrica.comprasAbertoAmarelo" name="comprasAbertoAmarelo" class="form-control"></div><br>
         </div>
       </div>
       </ol>
@@ -81,18 +80,18 @@
           <p>Parametrize abaixo as rendas para analise de risco por renda do cliente</p>
             <div class="ml-4">
               <div class="row mr-4">
-                <div class="p-2 mb-2 bg-danger text-white"><input  type="number" [(ngModel)]="metrica.classVermelho" name="classVermelho" class="form-control"></div><br>
+                <div class="p-2 mb-2 bg-danger text-white"><input  type="number" [(ngModel)]="metrica.rendaVermelho" name="rendaVermelho" class="form-control"></div><br>
               </div>
               <div class="row">
-                <div class="p-2 mb-2 bg-warning text-dark"><input  type="number" [(ngModel)]="metrica.classAmarelo" name="classAmarelo" class="form-control"></div><br>
+                <div class="p-2 mb-2 bg-warning text-dark"><input  type="number" [(ngModel)]="metrica.rendaAmarelo" name="rendaAmarelo" class="form-control"></div><br>
               </div>
             </div>
             <div>
               <div class="row ">
-                <div class="p-2 mb-2 bg-success text-white"><input  type="number" [(ngModel)]="metrica.classVermelho" name="classVermelho" class="form-control"></div><br>
+                <div class="p-2 mb-2 bg-success text-white"><input  type="number" [(ngModel)]="metrica.rendaVerde" name="rendaVerde" class="form-control"></div><br>
               </div>
               <div class="row">
-                <div class="p-2 mb-2 bg-primary text-dark"><input  type="number" [(ngModel)]="metrica.classAmarelo" name="classAmarelo" class="form-control"></div><br>
+                <div class="p-2 mb-2 bg-primary text-dark"><input  type="number" [(ngModel)]="metrica.rendaAzul" name="rendaAzul" class="form-control"></div><br>
               </div>
             </div>
         </ol>
