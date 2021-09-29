@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Cliente } from '../clientes/clientes';
 import { Analise } from './analise';
 
 @Injectable({
@@ -13,8 +12,8 @@ export class AnaliseService {
 
   constructor( private http : HttpClient) { }
   
-  criaAnalise(analise:Analise):Observable<Analise>{
-    return this.http.post<Analise>(`http://localhost:8080/api/analise/save`,analise);
+  criaAnalise(analise:Analise):Observable<any>{
+    return this.http.post<Analise>('http://localhost:8080/api/analise/cria',analise);
   }
   alteraAnalise(analise:Analise):Observable<any>{
     return this.http.put<Analise>(`http://localhost:8080/api/analise/${analise.id}`,analise);

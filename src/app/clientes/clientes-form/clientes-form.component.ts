@@ -36,7 +36,7 @@ export class ClientesFormComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private router: Router) {
     this.cliente = new Cliente();   
-    this.analise = new Analise();
+  //  this.analise = new Analise();
     
   
   }
@@ -57,7 +57,7 @@ export class ClientesFormComponent implements OnInit {
     this.service.alterar(this.cliente)
     .subscribe(response =>{
       console.log(this.cliente);
-    }); 
+    });     
   }
 
 
