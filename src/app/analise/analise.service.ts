@@ -12,8 +12,11 @@ export class AnaliseService {
 
   constructor( private http : HttpClient) { }
   
+  criaAnalisecompleta(analise:Analise):Observable<any>{
+    return this.http.post<Analise>('http://localhost:8080/api/analise/postanalisecp',analise);
+  }
   criaAnalise(analise:Analise):Observable<any>{
-    return this.http.post<Analise>('http://localhost:8080/api/analise/cria',analise);
+    return this.http.post<Analise>('http://localhost:8080/api/analise/postanalisec',analise);
   }
   alteraAnalise(analise:Analise):Observable<any>{
     return this.http.put<Analise>(`http://localhost:8080/api/analise/${analise.id}`,analise);

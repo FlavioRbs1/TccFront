@@ -25,7 +25,6 @@ export class ClientesService {
   getById(id:number):Observable<Cliente>{
     return this.http.get<any>(`http://localhost:8080/api/cliente/buscaid/${id}`);
   }
-
   alterar(cliente:Cliente):Observable<any>{
     return this.http.put<Cliente>(`http://localhost:8080/api/cliente/busca/${cliente.cpf}`,cliente);
   }

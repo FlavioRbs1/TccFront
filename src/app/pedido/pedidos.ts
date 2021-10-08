@@ -1,12 +1,12 @@
 import { Cliente } from "../clientes/clientes";
 
-export class Pedido{
+export class Pedidos{
 
     id: number| any;
-    cliente: Cliente| any;
     dia:Date|any;
-    valor: number|any;
-    formaPagamento: number|any;
+    formaPagamento: string|any;
     parcelas: number|any;
     situacao:string|any;
+    valor: number|any;
+    idCliente: Cliente| any;
 }

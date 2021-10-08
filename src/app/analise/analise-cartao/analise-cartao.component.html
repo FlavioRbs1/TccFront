@@ -10,19 +10,18 @@
     <form #analiseForm="ngForm"  (ngSubmit)="onSubmit()">
         <div class="row">
             <div class="col-md-4">
-                <h4>Id Cliente</h4>
+                <h4>Id</h4>
                 <div >
-                    <h4>{{ idCliente }}</h4>
+                    <h4>{{ id }}</h4>
                 </div>
             </div>
             <div class="col-md-4">
                 <h4>Pedido</h4>
-                <h4>{{idPedido}}</h4>
+                <h4></h4>
             </div>
             <div class="col-md-4">
                 <h4>Data</h4>
-                <h4>{{dataAnalise}} </h4>
-                {{id}}
+                <h4>Data </h4>
             </div>
         </div>
         <br>
@@ -38,10 +37,6 @@
                     <tr>
                         <th scope="row">ANALISE POR CPF</th>
                         <td  >{{analiseCpf}}</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">ANALISE DE PENDENCIAS</th>
-                        <td >{{analisePendencias}}</td>
                     </tr>
                     <tr>
                         <th scope="row">ANALISE POR RENDA</th>
@@ -60,8 +55,8 @@
             <h1>SITUAÇÃO: APROVADO</h1>
             <div class="container">
                 <div class="row">
-                    <button type="button" (onclick)="realizaAnalise()" class="btn btn-success mr-2">Realizar Analise</button>
-                    <button type="submit" class="btn btn-dark mr-2">Liberar sob concessão</button>
+                    <button type="submit" (onclick)="realizaAnalise()" class="btn btn-success mr-2">Realizar Analise</button>
+                    <button type="button" class="btn btn-dark mr-2">Liberar sob concessão</button>
                 </div>
             </div>
         </div>

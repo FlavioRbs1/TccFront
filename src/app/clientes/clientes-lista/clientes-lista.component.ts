@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router} from '@angular/router';
 import { ClientesService } from 'src/app/clientes/clientes.service';
-import { Pedido } from 'src/app/pedido/pedido';
+import { Pedidos } from 'src/app/pedido/pedidos';
 import { Cliente } from '../clientes';
 
 @Component({
@@ -12,11 +12,11 @@ import { Cliente } from '../clientes';
 export class ClientesListaComponent implements OnInit {
 
   cliente: Cliente |any;
-  pedido: Pedido |any;
+  pedido: Pedidos |any;
   
   constructor(private service:ClientesService, private router: Router) {
     this.cliente = new Cliente();
-    this.pedido = new Pedido();
+    this.pedido = new Pedidos();
    }
 
   ngOnInit(): void {}

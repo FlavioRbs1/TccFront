@@ -2,19 +2,19 @@
 <ol class="breadcrumb mb-4">
     <li class="breadcrumb-item active" class="font-weight-bold">Informações de pedido</li>
 </ol>
-<form #pedidosForm= "ngForm" (ngSubmit)="onSubmit()">
+<form #pedidoForm= "ngForm" (ngSubmit)="onSubmit()">
     <div class="container">
         <div class="row">
             <div class="col-md-4">
                 <div class="form-group">
-                    <label>PEDIDO</label><br>
-                    <label>Nº </label>
+                    <label class="font-weight-bold">PEDIDO</label><br>
+                    <label>{{ idPedido }}</label>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
-                    <label>CLIENTE</label><br>
-                    <label>Nº </label>
+                    <label class="font-weight-bold">CLIENTE</label><br>
+                    {{ idCliente }}
                 </div>
             </div>
 
@@ -23,33 +23,33 @@
             <div class="col-md-4">
 
                 <div class="form-group">
-                    <label>DATA DO PEDIDO</label><br>
-                    <label>DATA </label>
+                    <label class="font-weight-bold">DATA DO PEDIDO</label><br>
+                    {{ dia}}
                 </div>
                 <div class="form-group">
-                    <label>QUANTIDADE DE PARCELAS</label><br>
-                    <label>QTD</label>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label>VALOR DO PEDIDO</label><br>
-                    <label>VALOR</label>
-                </div>
-                <div class="form-group">
-                    <label>SITUAÇÃO DO PEDIDO</label><br>
-                    <label>SITUAÇÃO</label>
+                    <label class="font-weight-bold">QUANTIDADE DE PARCELAS</label><br>
+                    <label>{{parcelas}}</label>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
-                    <label>FORMA DE PAGAMENTO</label><br>
-                    <label>FORMA</label>
+                    <label class="font-weight-bold">VALOR DO PEDIDO</label><br>
+                    <label >{{ valor}}</label>
+                </div>
+                <div class="form-group">
+                    <label class="font-weight-bold">SITUAÇÃO DO PEDIDO</label><br>
+                    <label>{{ situacao }}</label>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="font-weight-bold">FORMA DE PAGAMENTO</label><br>
+                    <label>{{formaPagamento}}</label>
                 </div>
             </div>
         </div>
     </div>
     <div>
-        <button class="btn btn-dark ml-4" type="button" routerLink='/clientes-form/8'>Cadastro do cliente <i class="fas fa-edit"></i></button>
+        <button class="btn btn-dark ml-4" type="submit" routerLink='/analise-form/{{idCliente}}/{{idPedido}}'>Realizar analise <i class="fas fa-edit"></i></button>
     </div>
 </form>

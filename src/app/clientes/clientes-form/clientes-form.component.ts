@@ -1,11 +1,8 @@
-import { HttpErrorResponse, HttpParams } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ClientesService } from 'src/app/clientes/clientes.service';
 import { Cliente } from '../clientes';
-import { Params, Router } from '@angular/router';
-import { ActivatedRoute } from '@angular/router'
-import { param } from 'jquery';
+import { Params, Router,ActivatedRoute } from '@angular/router';
 import { Analise } from 'src/app/analise/analise';
 import { AnaliseService } from 'src/app/analise/analise.service';
 
@@ -36,7 +33,6 @@ export class ClientesFormComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private router: Router) {
     this.cliente = new Cliente();   
-  //  this.analise = new Analise();
     
   
   }
@@ -58,6 +54,7 @@ export class ClientesFormComponent implements OnInit {
     .subscribe(response =>{
       console.log(this.cliente);
     });     
+    
   }
 
 

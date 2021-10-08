@@ -17,11 +17,12 @@ import { AnaliseModule } from './analise/analise.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MetricasService } from './metricas/metricas.service';
 import { UsuariosService } from './usuarios/usuarios.service';
+import { PedidoService } from './pedido/pedido.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,6 +45,7 @@ import { UsuariosService } from './usuarios/usuarios.service';
   providers: [
     ClientesService,
     MetricasService,
+    PedidoService,
     UsuariosService
   ],
   bootstrap: [AppComponent]
