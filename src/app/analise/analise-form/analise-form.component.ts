@@ -17,22 +17,22 @@ import { AnaliseService } from '../analise.service';
 export class AnaliseFormComponent implements OnInit {
 
 
-  data: string |any;
+  data: string | any;
   id: number | any;
   analise: Analise | any;
   cliente: Cliente | any;
-  analiseCpf: number|any;
-  analisePendencias: number|any;
-  analiseRenda: number|any;
-  analisePerc: number|any;
-  situacao:string|any;
-  concessao:string|any;
-  idCliente:number|any;
-  idPedido:number|any;
-  sucess:Boolean = false;
-  errors:String|any;
-  dataAnalise: string|any;
-  
+  analiseCpf: number | any;
+  analisePendencias: number | any;
+  analiseRenda: number | any;
+  analisePerc: number | any;
+  situacao: string | any;
+  concessao: string | any;
+  idCliente: number | any;
+  idPedido: number | any;
+  sucess: Boolean = false;
+  errors: String | any;
+  dataAnalise: string | any;
+
 
 
 
@@ -43,7 +43,7 @@ export class AnaliseFormComponent implements OnInit {
     private service: AnaliseService,
     private router: Router) {
 
-     
+
 
   }
 
@@ -51,32 +51,33 @@ export class AnaliseFormComponent implements OnInit {
 
     let params: Observable<Params> = this.activatedRoute.params
     params.subscribe(urlParams => {
-      this.idCliente =Number( urlParams['idCliente'])
-      this.idPedido = Number (urlParams['idPedido'])
-     console.log(urlParams)
-      if (this.idCliente) {
+      this.idCliente = Number(urlParams['idCliente'])
+      this.idPedido = Number(urlParams['idPedido'])
+      console.log(urlParams)
+/*      if (this.idCliente) {
         this.clienteService.getById(this.idCliente).subscribe(
-          response => this.cliente = response, errorResponse => this.cliente = new Cliente()
+          response => this.cliente = response, errorResponse => this.cliente = null
         )
-      }
+      } */
     });
-    const analise= new Analise();
-    analise.idCliente = Number( this.idCliente);
-    analise.idPedidos = Number( this.idPedido);
-  this.service.criaAnalisecompleta(analise).subscribe(response => {
-    this.id = analise.id;
-  });
-  this.service.analiseById(analise.id).subscribe(response =>(
-    analise.analiseCpf = response
-  ))
-}
-  
+    const analise = new Analise();
+    analise.idCliente = Number(this.idCliente);
+    analise.idPedido = Number(this.idPedido);
+    this.service.criaAnalisecompleta(analise).subscribe(
+      response => this.analise = response, errorResponse => this.analise = new Analise()
+    );
+ /*   analise.id = this.id;
+    this.service.analiseById(analise.id).subscribe(response => (
+      analise.analiseCpf = response
+    )) */
+  }
+
   onSubmit() {
-      console.log(this.cliente);
-      console.log(this.data);
-      console.log(this.analisePendencias);
-      console.log(this.analiseRenda);
-      console.log(this.analisePerc);
+    console.log(this.cliente);
+    console.log(this.data);
+    console.log(this.analisePendencias);
+    console.log(this.analiseRenda);
+    console.log(this.analisePerc);
   }
 
   realizaAnalise() {

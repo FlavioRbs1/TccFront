@@ -11,7 +11,7 @@ export class Analise{
     concessao:string|any;
 	dataAnalise:string|any;
 	idCliente:Cliente|any;
-	idPedidos:number|any;
+	idPedido:number|any;
     situacao:string|any;
 
 
