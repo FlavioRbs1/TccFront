@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { Alert } from 'bootstrap';
 import { Observable } from 'rxjs';
 import { Cliente } from 'src/app/clientes/clientes';
 import { ClientesService } from 'src/app/clientes/clientes.service';
@@ -32,6 +33,7 @@ export class AnaliseFormComponent implements OnInit {
   sucess: Boolean = false;
   errors: String | any;
   dataAnalise: string | any;
+  score: number|any;
 
 
 
@@ -54,25 +56,22 @@ export class AnaliseFormComponent implements OnInit {
       this.idCliente = Number(urlParams['idCliente'])
       this.idPedido = Number(urlParams['idPedido'])
       console.log(urlParams)
-/*      if (this.idCliente) {
+     if (this.idCliente) {
         this.clienteService.getById(this.idCliente).subscribe(
           response => this.cliente = response, errorResponse => this.cliente = null
         )
-      } */
+      } 
     });
     const analise = new Analise();
     analise.idCliente = Number(this.idCliente);
     analise.idPedido = Number(this.idPedido);
     this.service.criaAnalisecompleta(analise).subscribe(
       response => this.analise = response, errorResponse => this.analise = new Analise()
-    );
- /*   analise.id = this.id;
-    this.service.analiseById(analise.id).subscribe(response => (
-      analise.analiseCpf = response
-    )) */
+    )
   }
-
+  
   onSubmit() {
+    console.log(this.id) 
     console.log(this.cliente);
     console.log(this.data);
     console.log(this.analisePendencias);

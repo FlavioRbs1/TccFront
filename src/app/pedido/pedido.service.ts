@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Cliente } from '../clientes/clientes';
@@ -27,13 +27,16 @@ export class PedidoService {
   parcelaById(idCliente: number): Observable<Pedidos> {
     return this.http.get<any>(`http://localhost:8080/api/pedido/buscaparcelapedido/${idCliente}`);
   }
-  situacaoById(idCliente: number): Observable<Pedidos> {
-    return this.http.get<any>(`http://localhost:8080/api/pedido/buscasituacaopedido/${idCliente}`);
+  situacaoById(idCliente: number): Observable<String> {
+    const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
+    return this.http.get(`http://localhost:8080/api/pedido/buscasituacaopedido/${idCliente}`,{headers, responseType: 'text' as const });
   }
-/*  dataById(idCliente: number): Observable<Pedidos> {
-    return this.http.get<any>(`http://localhost:8080/api/pedido/buscadatapedido/${idCliente}`);
-  }*/
-  formaPagtByID(idCliente: number): Observable<Pedidos> {
-    return this.http.get<any>(`http://localhost:8080/api/pedido/buscaformapedido/${idCliente}`);
+  dataById(idCliente: number): Observable<String> {
+    const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
+    return this.http.get(`http://localhost:8080/api/pedido/buscadatapedido/${idCliente}`,{headers, responseType: 'text' as const });
+  }
+  formaPagtByID(idCliente: number): Observable<String> {
+    const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
+    return this.http.get(`http://localhost:8080/api/pedido/buscaformapedido/${idCliente}`,{headers, responseType: 'text' as const });
   }
 }

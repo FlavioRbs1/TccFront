@@ -13,6 +13,7 @@ export class Analise{
 	idCliente:Cliente|any;
 	idPedido:number|any;
     situacao:string|any;
+	score:number|any;
 
 
 	

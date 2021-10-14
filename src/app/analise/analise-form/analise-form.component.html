@@ -21,7 +21,7 @@
             </div>
             <div class="col-md-4">
                 <h4>Data</h4>
-                <h4>{{dataAnalise}} </h4>
+                <h4>{{analise?.dataAnalise}} </h4>
                 {{id}}
             </div>
         </div>
@@ -37,27 +37,31 @@
                 <tbody>
                     <tr>
                         <th scope="row">ANALISE POR CPF</th>
-                        <td  >{{analiseCpf}}</td>
+                        <td  >{{analise?.analiseCpf}}</td>
                     </tr>
                     <tr>
                         <th scope="row">ANALISE DE PENDENCIAS</th>
-                        <td >{{analisePendencias}}</td>
+                        <td >{{analise?.analisePendencias}}</td>
                     </tr>
                     <tr>
                         <th scope="row">ANALISE POR RENDA</th>
-                        <td  >{{analiseRenda}}</td>
+                        <td  >{{analise?.analiseRenda}}</td>
                     </tr>
                     <tr>
                         <th scope="row">ANALISE POR PERCENTUAL DE ENDIVIDAMENTO</th>
-                        <td >{{analisePerc}}</td>
+                        <td >{{analise?.analisePerc}}</td>
                     </tr>
-                    <tr class="table-warning">
+                    <tr>
                         <th scope="row">SCORE TOTAL</th>
-                        <td>Score da Analise</td>
+                        <td class="font-weight-bold">{{analise?.score}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">CLASSIFICAÇÃO DO CLIENTE</th>
+                        <td class="font-weight-bold">{{analise?.classificacao}}</td>
                     </tr>
                 </tbody>
             </table>
-            <h1>SITUAÇÃO: APROVADO</h1>
+            <h1>SITUAÇÃO: {{analise?.situacao}}</h1>
             <div class="container">
                 <div class="row">
                     <button type="button" (onclick)="realizaAnalise()" class="btn btn-success mr-2">Realizar Analise</button>

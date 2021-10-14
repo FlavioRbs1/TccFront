@@ -21,7 +21,7 @@ export class AnaliseService {
   alteraAnalise(analise:Analise):Observable<any>{
     return this.http.put<Analise>(`http://localhost:8080/api/analise/${analise.id}`,analise);
   }
-  analiseById(id: number):Observable<Analise>{
-    return this.http.get<any>(`http://localhost:8080/api/analise/${id}`);
+  analiseById(analise: Analise):Observable<Analise>{
+    return this.http.get<any>(`http://localhost:8080/api/analise/${analise.idPedido}/${analise.idCliente}`);
   }
 }

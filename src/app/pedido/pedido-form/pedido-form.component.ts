@@ -59,6 +59,14 @@ export class PedidoComponent implements OnInit {
         this.service.formaPagtByID(pedido.idCliente).subscribe(
           response => this.formaPagamento = response, errorResponse => this.formaPagamento = null
         )
+        this.service.dataById(pedido.idCliente).subscribe(
+          response => {
+            console.log(response); 
+            this.dia = response}, 
+            errorResponse => {
+              console.log(errorResponse); 
+              this.dia = null}
+        )
       }
     });
   }
