@@ -3,142 +3,157 @@
   <li class="breadcrumb-item active" class="font-weight-bold">Configuração de métricas</li>
 </ol>
 
-<form #metricasForm="ngForm"  (ngSubmit)="onSubmit()">
+<form #metricasForm="ngForm" (ngSubmit)="onSubmit()">
   <div class="row">
     <div class="col-md-6">
       <ol class="breadcrumb mb-4">
-      <li class="breadcrumb-item active">Analise por CPF</li>
-      <p>Na analise por CPF, o sistema verificará se o CPF possui compra na instituição</p>
-      <p>Parametrize os riscos de acordo com a quantidade de compra realizada</p>
-      <div class="ml-4">
-        <div class="row mr-4">
-          <div class="p-2 mb-2 bg-danger text-white"><input  type="number" [(ngModel)]="metrica.cpfVermelho" name="cpfVermelho" class="form-control"></div><br>
-        </div>
-        <div class="row">
-          <div class="p-2 mb-2 bg-warning text-dark"><input  type="number" [(ngModel)]="metrica.cpfAmarelo" name="cpfAmarelo" class="form-control"></div><br>
-        </div>
-      </div>
-      <div>
-        <div class="row ">
-          <div class="p-2 mb-2 bg-success text-white"><input  type="number" [(ngModel)]="metrica.cpfVerde" name="cpfVerde" class="form-control"></div><br>
-        </div>
-        <div class="row">
-          <div class="p-2 mb-2 bg-primary text-dark"><input  type="number" [(ngModel)]="metrica.cpfAzul" name="cpfAzul" class="form-control"></div><br>
-        </div>
-      </div>
-    </ol>
-    <ol class="breadcrumb mb-4">
-      <li class="breadcrumb-item active">Analise por Idade</li><br>
-      <p>Parametrize abaixo as idades consideradas de risco conforme política da empresa</p>
+        <li class="breadcrumb-item active">Analise de compra interna</li>
+        <p>Na analise por CPF, o sistema verificará se o CPF possui compra na instituição</p>
+        <p>Parametrize os riscos de acordo com a quantidade de compra realizada</p>
         <div class="ml-4">
           <div class="row mr-4">
-            <div class="p-2 mb-2 bg-danger text-white"><input  type="number" [(ngModel)]="metrica.idadeVermelho" name="idadeVermelho" class="form-control"></div><br>
+            <div class="p-2 mb-2 bg-danger text-white"><input type="number" [(ngModel)]="metrica.cpfVermelho"
+                name="cpfVermelho" class="form-control"></div><br>
           </div>
           <div class="row">
-            <div class="p-2 mb-2 bg-warning text-dark"><input  type="number" [(ngModel)]="metrica.idadeAmarelo" name="idadeAmarelo" class="form-control"></div><br>
+            <div class="p-2 mb-2 bg-warning text-dark"><input type="number" [(ngModel)]="metrica.cpfAmarelo"
+                name="cpfAmarelo" class="form-control"></div><br>
           </div>
         </div>
         <div>
           <div class="row ">
-            <div class="p-2 mb-2 bg-success text-white"><input  type="number" [(ngModel)]="metrica.idadeVerde" name="idadeVerde" class="form-control"></div><br>
+            <div class="p-2 mb-2 bg-success text-white"><input type="number" [(ngModel)]="metrica.cpfVerde"
+                name="cpfVerde" class="form-control"></div><br>
           </div>
           <div class="row">
-            <div class="p-2 mb-2 bg-primary text-dark"><input  type="number" [(ngModel)]="metrica.idadeAzul" name="idadeAzul" class="form-control"></div><br>
+            <div class="p-2 mb-2 bg-primary text-dark"><input type="number" [(ngModel)]="metrica.cpfAzul" name="cpfAzul"
+                class="form-control"></div><br>
+          </div>
+        </div>
+      </ol>
+
+      <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item active">Regras de Classificação</li>
+        <p>Informe um score por cor. O sistema classificará o cliente comparando o valor obtido de Score com o valor
+          parametrizado: VERMELHO - Risco alto |
+          AMARELO - Risco Médio | VERDE - Risco baixo | AZUL - Risco não identificado
+        </p>
+        <div class="row">
+          <div class="col-md-6">
+            <br>
+            <div class="p-2 mb-2 bg-danger text-white"><input type="number" [(ngModel)]="metrica.classVermelho"
+                name="classVermelho" class="form-control"></div><br>
+            <div class="p-2 mb-2 bg-warning text-dark"><input type="number" [(ngModel)]="metrica.classAmarelo"
+                name="classAmarelo" class="form-control"></div><br>
+          </div>
+          <div class="col-md-6">
+            <br>
+            <div class="p-2 mb-2 bg-success text-white"><input type="number" [(ngModel)]="metrica.classVerde"
+                name="classVerde" class="form-control"></div><br>
+            <div class="p-2 mb-2 bg-primary text-white"><input type="number" [(ngModel)]="metrica.classAzul"
+                name="classAzul" class="form-control"></div>
+          </div>
+        </div>
+      </ol>
+      
+
+      <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item active">Limite de crédito por Classificação</li>
+        <br>
+        <p>Parametrize abaixo o limite de crédito que será disponibilizado ao cliente por classificação obtida no score
+        </p>
+        <div class="ml-4">
+          <div class="row mr-4">
+            <div class="p-2 mb-2 bg-danger text-white"><input type="number" [(ngModel)]="metrica.limiteVermelho"
+                name="limiteVermelho" class="form-control"></div><br>
+          </div>
+          <div class="row">
+            <div class="p-2 mb-2 bg-warning text-dark"><input type="number" [(ngModel)]="metrica.limiteAmarelo"
+                name="limiteAmarelo" class="form-control"></div><br>
+          </div>
+        </div>
+        <div>
+          <div class="row ">
+            <div class="p-2 mb-2 bg-success text-white"><input type="number" [(ngModel)]="metrica.limiteVerde"
+                name="limiteVerde" class="form-control"></div><br>
+          </div>
+          <div class="row">
+            <div class="p-2 mb-2 bg-primary text-dark"><input type="number" [(ngModel)]="metrica.limiteAzul"
+                name="limiteAzul" class="form-control"></div><br>
+          </div>
+        </div>
+      </ol>
+ <!--     <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item active">Valor limite para liberação de crédito</li>
+        <p>Informe um valor limite de liberação de crédito, caso não haja limite deixe o campo em branco.</p>
+        <div class="col-md-4">
+          <div class="p-2 mb-2 bg-dark text-white">
+            <input type="number" [(ngModel)]="metrica.limiteCredito" name="limiteCredito" class="form-control">
+          </div>
+        </div>
+        <div>
+          <br>
+          <label> Valor limite de liberação</label>
+        </div>
+      </ol> -->
+    </div>
+    <div class="col-md-6">
+      <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item active">Analise Compra em aberto</li>
+        <p>Nesta analise o sistema verificará se ewxiste compra fora do prazo de vencimento na instituição</p>
+        <p>Parametrize a quantidade de pedidos em aberto que será considerado de baixo risco (AZUL) e alto risco
+          (VERMELHO)</p>
+        <div class="ml-5">
+          <div class="row ">
+            <div class="p-2 mb-2 bg-danger text-white"><input type="number" [(ngModel)]="metrica.comprasAbertoVermelho"
+                name="comprasAbertoVermelho" class="form-control"></div><br>
+          </div>
+          <div class="row">
+            <div class="p-2 mb-2 bg-primary text-dark"><input type="number" [(ngModel)]="metrica.comprasAbertoAmarelo"
+                name="comprasAbertoAmarelo" class="form-control"></div><br>
           </div>
         </div>
       </ol>
       <ol class="breadcrumb mb-4">
-        <li class="breadcrumb-item active">Valor limite para liberação de crédito</li>
-        <p>Informe um valor limite de liberação de crédito, caso não haja limite deixe o campo em branco.</p>
-          <div class="col-md-4">
-            <div class="p-2 mb-2 bg-dark text-white">
-              <input  type="number" [(ngModel)]="metrica.limiteCredito" name="limiteCredito" class="form-control"></div>
-            </div>
-            <div>
-              <br>
-            <label> Valor limite de liberação</label>
-
+        <li class="breadcrumb-item active">Analise por Renda</li>
+        <p>Parametrize abaixo as rendas para analise de risco por renda do cliente</p>
+        <div class="ml-4">
+          <div class="row mr-4">
+            <div class="p-2 mb-2 bg-danger text-white"><input type="number" [(ngModel)]="metrica.rendaVermelho"
+                name="rendaVermelho" class="form-control"></div><br>
           </div>
-      </ol>
-  </div>
-  <div class="col-md-6">
-    <ol class="breadcrumb mb-4">
-      <li class="breadcrumb-item active">Analise Compra em aberto</li>
-      <p>Nesta analise o sistema verificará se ewxiste compra fora do prazo de vencimento na instituição</p>
-      <p>Parametrize a quantidade de pedidos em aberto que será considerado de baixo risco (AZUL) e alto risco (VERMELHO)</p>
-      <div class="ml-5">
-        <div class="row ">
-          <div class="p-2 mb-2 bg-danger text-white"><input  type="number" [(ngModel)]="metrica.comprasAbertoVermelho" name="comprasAbertoVermelho" class="form-control"></div><br>
+          <div class="row">
+            <div class="p-2 mb-2 bg-warning text-dark"><input type="number" [(ngModel)]="metrica.rendaAmarelo"
+                name="rendaAmarelo" class="form-control"></div><br>
+          </div>
         </div>
+        <div>
+          <div class="row ">
+            <div class="p-2 mb-2 bg-success text-white"><input type="number" [(ngModel)]="metrica.rendaVerde"
+                name="rendaVerde" class="form-control"></div><br>
+          </div>
+          <div class="row">
+            <div class="p-2 mb-2 bg-primary text-dark"><input type="number" [(ngModel)]="metrica.rendaAzul"
+                name="rendaAzul" class="form-control"></div><br>
+          </div>
+        </div>
+      </ol>
+      <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item active">Analise por Percentual de endividamento</li>
+        <p>Informe abaixo o valor máximo de endividamento que o sistema deve permitir em relação a renda do cliente.</p>
         <div class="row">
-          <div class="p-2 mb-2 bg-primary text-dark"><input  type="number" [(ngModel)]="metrica.comprasAbertoAmarelo" name="comprasAbertoAmarelo" class="form-control"></div><br>
+          <div class="col-md-4">
+            <input type="number" [(ngModel)]="metrica.percentual" name="percentual" class="form-control">
+          </div>
+          <div class="col-md-8">
+            <label>% de endividamento em relação à renda individual</label>
+          </div>
         </div>
-      </div>
       </ol>
-        <ol class="breadcrumb mb-4">
-          <li class="breadcrumb-item active">Analise por Renda</li>
-          <p>Parametrize abaixo as rendas para analise de risco por renda do cliente</p>
-            <div class="ml-4">
-              <div class="row mr-4">
-                <div class="p-2 mb-2 bg-danger text-white"><input  type="number" [(ngModel)]="metrica.rendaVermelho" name="rendaVermelho" class="form-control"></div><br>
-              </div>
-              <div class="row">
-                <div class="p-2 mb-2 bg-warning text-dark"><input  type="number" [(ngModel)]="metrica.rendaAmarelo" name="rendaAmarelo" class="form-control"></div><br>
-              </div>
-            </div>
-            <div>
-              <div class="row ">
-                <div class="p-2 mb-2 bg-success text-white"><input  type="number" [(ngModel)]="metrica.rendaVerde" name="rendaVerde" class="form-control"></div><br>
-              </div>
-              <div class="row">
-                <div class="p-2 mb-2 bg-primary text-dark"><input  type="number" [(ngModel)]="metrica.rendaAzul" name="rendaAzul" class="form-control"></div><br>
-              </div>
-            </div>
-        </ol>
-        <ol class="breadcrumb mb-4">
-          <li class="breadcrumb-item active">Analise por Percentual de endividamento</li>
-          <p>Informe abaixo o valor máximo de endividamento que o sistema deve permitir em relação a renda do cliente.</p>
-            <div class="row">
-              <div class="col-md-4">
-                <input type="number" [(ngModel)]="metrica.percentual" name="percentual" class="form-control">
-              </div>
-              <div class="col-md-8">
-                <label>% de endividamento em relação à renda individual</label>
-              </div>
-            </div>
-        </ol>
-    </div>   
-  </div>
-  <div class="conteiner-fluid m-4">
-  </div>
-  <ol class="breadcrumb mb-4">
-    <li class="breadcrumb-item active">Regras de Classificação</li>
-    <p>Deve ser informada as regras de classificação que o cliente será enquadrado na analise de crédito sendo: VERMELHO - Risco alto | 
-      AMARELO - Risco Médio | VERDE - Risco baixo | AZUL - Risco não identificado
-    </p>
-  </ol>  
-    <div class="row">
-      <div class="col-md-2">
-        <br>
-        <div class="p-3 mb-2 bg-danger text-white">VERMELHO</div><br>
-        <div class="p-3 mb-2 bg-warning text-dark">AMARELO</div><br>
-      </div>
-      <div class="col-md-2">
-        <br>
-        <div class="p-2 mb-2 bg-danger text-white"><input  type="number" [(ngModel)]="metrica.classVermelho" name="classVermelho" class="form-control"></div><br>
-        <div class="p-2 mb-2 bg-warning text-dark"><input  type="number" [(ngModel)]="metrica.classAmarelo" name="classAmarelo" class="form-control"></div><br>
-      </div>
-      <div class="col-md-2">
-        <br>
-        <div class="p-3 mb-2 bg-success text-white">VERDE</div><br>
-        <div class="p-3 mb-2 bg-primary text-white">AZUL</div>
-      </div>
-      <div class="col-md-2">
-        <br>
-        <div class="p-2 mb-2 bg-success text-white"><input  type="number" [(ngModel)]="metrica.classVerde" name="classVerde" class="form-control"></div><br>
-        <div class="p-2 mb-2 bg-primary text-white"><input type="number" [(ngModel)]="metrica.classAzul" name="classAzul" class="form-control"></div>
-      </div>
     </div>
-  
+    <div class="conteiner-fluid m-4">
+    </div>
+    
+  </div>
   <button type="submit" class="btn btn-success mr-2">Salvar Alteração <i class="fas fa-save"></i></button>
 </form>

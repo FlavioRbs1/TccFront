@@ -5,27 +5,23 @@
 <div class="container">
     <form >
         <div class="form-group">
-            <label>PESQUISE POR: </label>
+            <label>Informe o CPF do cliente: </label>
             <div class="row">
                 <div class="column">
                     
                     <div class="col-md">
-                        <input type="text" class="form-control" [(ngModel)]="cliente.cpf" name="cpf">
+                        <input type="text" class="form-control" [(ngModel)]="cliente.cpf" name="cpf" >
                     </div>
-                    <div class="col-md">
-                        <input type="text" class="form-control mt-4" [(ngModel)]="pedido.id" name="id">
-                    </div>                    
+                                    
                 </div>
                 <div class="column">
                    
                     <div class="mb-4">
                         <button class="btn btn-outline-success my-2 my-sm-0" type="button" routerLink="/clientes-form/{{cliente.cpf}}" >CPF CLIENTE</button>
                     </div>
-                    <div>
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="button" routerLink="/pedido-form/{{pedido.id}}" >PEDIDO</button>
-                    </div>
+                    
                 </div>
             </div>
         </div>
-      </form>
+    </form>
 </div>

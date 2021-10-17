@@ -39,4 +39,7 @@ export class PedidoService {
     const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
     return this.http.get(`http://localhost:8080/api/pedido/buscaformapedido/${idCliente}`,{headers, responseType: 'text' as const });
   }
+  getById(id:number):Observable<Pedidos>{
+    return this.http.get<any>(`http://localhost:8080/api/pedido/buscaclientebypedido/${id}`);
+  }
 }

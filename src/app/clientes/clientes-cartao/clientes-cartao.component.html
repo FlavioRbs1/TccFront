@@ -133,7 +133,9 @@
             </div>
 
             <div>
-                <button type="submit" class="btn btn-dark ml-4" >Realizar Analise <i class="fas fa-edit"></i></button>
+                <button type="button" (click)="salvaCliente()" class="btn btn-dark ml-4" >Salvar Cadastro <i class="fas fa-edit"></i></button>
+                <button type="submit" class="btn btn-success ml-4" routerLink='/analise-cartao/{{cliente.id}}' >Realizar Analise <i class="fas fa-edit"></i></button>
+                
             </div>
         </div>
     </form>

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Cliente } from '../clientes/clientes';
-import { HttpClient, HttpClientModule, HttpParams} from '@angular/common/http'
+import { HttpClient, HttpClientModule, HttpHeaders, HttpParams} from '@angular/common/http'
 import { Observable } from 'rxjs';
 
 
@@ -25,8 +25,13 @@ export class ClientesService {
   getById(id:number):Observable<Cliente>{
     return this.http.get<any>(`http://localhost:8080/api/cliente/buscaid/${id}`);
   }
+  getCpfById(id:number):Observable<String>{
+    const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
+    return this.http.get(`http://localhost:8080/api/cliente/buscacpfporid/${id}`,{headers, responseType: 'text' as const });
+  }
   alterar(cliente:Cliente):Observable<any>{
     return this.http.put<Cliente>(`http://localhost:8080/api/cliente/busca/${cliente.cpf}`,cliente);
   }
  
+  
 }

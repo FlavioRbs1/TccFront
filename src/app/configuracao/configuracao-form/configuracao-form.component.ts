@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SidebarComponent } from 'src/app/template/sidebar/sidebar.component';
 import { Configuracao } from '../configuracao';
+import { ConfiguracaoService } from '../configuracao.service';
 
 @Component({
   selector: 'app-configuracao-form',
@@ -12,11 +13,12 @@ export class ConfiguracaoFormComponent implements OnInit {
   cor:string | any;
   side:SidebarComponent|any;
 
-  constructor() { 
+  constructor(private service:ConfiguracaoService) { 
     this.cor = new Configuracao();
   }
 
   ngOnInit(): void {
+    this.service.busca
   }
 
   cores1(){

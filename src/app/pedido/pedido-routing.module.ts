@@ -5,7 +5,8 @@ import { PedidoComponent } from './pedido-form/pedido-form.component';
 
 
 const routes:Routes =[
-  {path:'pedido-form/:idCliente',component:PedidoComponent}
+  {path:'pedido-form/:idCliente',component:PedidoComponent},
+  {path:'pedido-lista/:id',component:PedidoComponent}
 ];
 
 @NgModule({

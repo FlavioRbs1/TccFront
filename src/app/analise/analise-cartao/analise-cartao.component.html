@@ -3,7 +3,7 @@
 <h1 class="mt-4">Analise de crédito</h1>
 <ol class="breadcrumb mb-4">
     <li class="breadcrumb-item active" class="font-weight-bold">Abaixo informações sobre a Analise de crédito referente
-        a esta solicitação</li>
+        a esta solicitação zsdg</li>
 </ol>
 <div class="container">
 
@@ -12,16 +12,12 @@
             <div class="col-md-4">
                 <h4>Id</h4>
                 <div >
-                    <h4>{{ id }}</h4>
+                    <h4>{{idCliente}}</h4>
                 </div>
             </div>
             <div class="col-md-4">
-                <h4>Pedido</h4>
-                <h4></h4>
-            </div>
-            <div class="col-md-4">
                 <h4>Data</h4>
-                <h4>Data </h4>
+                <h4> {{analise?.dataAnalise}}</h4>
             </div>
         </div>
         <br>
@@ -36,27 +32,26 @@
                 <tbody>
                     <tr>
                         <th scope="row">ANALISE POR CPF</th>
-                        <td  >{{analiseCpf}}</td>
+                        <td  >{{analise?.analiseCpf}}</td>
                     </tr>
                     <tr>
                         <th scope="row">ANALISE POR RENDA</th>
-                        <td  >{{analiseRenda}}</td>
+                        <td >{{analise?.analiseRenda}}</td>
                     </tr>
                     <tr>
                         <th scope="row">ANALISE POR PERCENTUAL DE ENDIVIDAMENTO</th>
-                        <td >{{analisePerc}}</td>
+                        <td >{{analise?.analisePerc}}</td>
                     </tr>
                     <tr class="table-warning">
                         <th scope="row">SCORE TOTAL</th>
-                        <td>Score da Analise</td>
+                        <td>{{analise?.score}}</td>
                     </tr>
                 </tbody>
             </table>
-            <h1>SITUAÇÃO: APROVADO</h1>
+            <h1>SITUAÇÃO: {{analise?.situacao}}</h1>
             <div class="container">
                 <div class="row">
-                    <button type="submit" (onclick)="realizaAnalise()" class="btn btn-success mr-2">Realizar Analise</button>
-                    <button type="button" class="btn btn-dark mr-2">Liberar sob concessão</button>
+                    <button type="submit" class="btn btn-dark mr-2">Liberar sob concessão</button>
                 </div>
             </div>
         </div>

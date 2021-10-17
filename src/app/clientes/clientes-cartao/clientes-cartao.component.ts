@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AnaliseService } from 'src/app/analise/analise.service';
 import { ClientesService } from 'src/app/clientes/clientes.service';
 import { Cliente } from '../clientes';
 
@@ -11,22 +12,24 @@ export class ClientesCartaoComponent implements OnInit {
 
   cliente: Cliente | any;
   situacao: String ="";
+  id:number|any;
 
-  constructor( private service: ClientesService ) {
+  constructor( private service: ClientesService, private serviceAnalise:AnaliseService ) {
     this.cliente = new Cliente();
-    
+    this.id = this.cliente.id;
+
    }
 
   ngOnInit(): void {
     
   }
-  
+  salvaCliente(){
+    let cliente = this.cliente
+    this.service.salvar(cliente).subscribe(
+      response => this.cliente = response, errorResponse => this.cliente = null
+    );
+  }
   onSubmit(){
-    this.service.salvar(this.cliente).subscribe(response =>{
-      console.log(response);
-      window.location.href="/analise-form";
-    });
 
   }
-  
 }

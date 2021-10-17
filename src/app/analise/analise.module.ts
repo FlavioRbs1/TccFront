@@ -4,12 +4,14 @@ import { AnaliseFormComponent  } from './analise-form/analise-form.component';
 import { AnaliseRoutingModule } from './analise-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { AnaliseCartaoComponent } from './analise-cartao/analise-cartao.component';
 
 
 
 @NgModule({
   declarations: [
-    AnaliseFormComponent
+    AnaliseFormComponent,
+    AnaliseCartaoComponent
   ],
   imports: [
     CommonModule,
@@ -19,7 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule
   ],
   exports:[
-    AnaliseFormComponent
+    AnaliseFormComponent,
+    AnaliseCartaoComponent
   ]
 })
 export class AnaliseModule { }
