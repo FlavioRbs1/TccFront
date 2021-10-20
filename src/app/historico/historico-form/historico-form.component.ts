@@ -9,17 +9,24 @@ import { HistoricoService } from '../historico.service';
 })
 export class HistoricoFormComponent implements OnInit {
 
-  historico: Historico|any;
+  historico: Historico[]=[];
+  _historico:Historico[]=[];
+  idPedido:String="";
 
   constructor(
     private service: HistoricoService) {
-      this.historico = new Historico();
+      
     }
     
     ngOnInit(): void {
       this.service.getAnalise().subscribe(
-        resposta => this.historico = resposta
+        resposta => {this.historico = resposta,this._historico=resposta}
       );
      }
+     filtra(filtro:any){
+       console.log(filtro)
+      this.historico = this._historico.filter(historico=>historico.idPedido?.id === Number(filtro.value))
+     }
+
 
 }

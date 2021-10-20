@@ -18,6 +18,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MetricasService } from './metricas/metricas.service';
 import { UsuariosService } from './usuarios/usuarios.service';
 import { PedidoService } from './pedido/pedido.service';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { PedidoService } from './pedido/pedido.service';
     AnaliseModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ChartsModule
     
   ],
   providers: [

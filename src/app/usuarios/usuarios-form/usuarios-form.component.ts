@@ -9,36 +9,32 @@ import { UsuariosService} from '../usuarios.service';
 })
 export class UsuariosFormComponent implements OnInit {
 
+  listaUsuario:Usuarios[]|any;
   usuario: Usuarios|any ;
   success:Boolean = false;
   errors: String []|any;
+  tipos:String[]|any;
+  situacoes:String[]=["Liberado"];
   
   constructor(
     private service: UsuariosService) { 
     this.usuario = new Usuarios();
+    this.tipos = ["Usuario","Gestor","Administrador"];
+    this.situacoes = ["Bloqueado","Liberado"]
   }
 
   ngOnInit(): void {
     this.service.getUsuarios().subscribe(
-      resposta => this.usuario = resposta
+      resposta => this.listaUsuario = resposta
     );
     
   }
-
   onSubmit(){
-    alert('clicou');
-    console.log()
-    this.service
-      .salvar(this.usuario)
-      .subscribe(response =>{
-        console.log(response);
-        this.success = true;
-    }
+    this.service.salvar(this.usuario).subscribe(
+      response => this.usuario = response,errorResponse => this.usuario = new this.usuario()
       );
- //   window.location.href="/usuarios-form";
-    this.service.getUsuarios().subscribe(
-      resposta => this.usuario = resposta
-    );
+     window.location.href='/usuarios-form';
   }
+
 }
 

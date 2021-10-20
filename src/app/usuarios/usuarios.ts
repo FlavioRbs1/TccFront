@@ -3,7 +3,7 @@ export class Usuarios{
     user:String|any;
     login:string|any;
     senha: string|any;
-    tipoUser:string|any;
-    situacao:string|any;
+    tipoUser:string="";
+    situacao:string="";
     cadastroUser:Date|any;
 }

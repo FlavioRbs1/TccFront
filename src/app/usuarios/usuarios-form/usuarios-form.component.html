@@ -6,51 +6,35 @@
   <form #usuariosForm="ngForm" (ngSubmit)="onSubmit()">
     <div class="row">
       <div class="col-md-4">
-        <div >
+        <div class="form-group">
           <label>NOME:</label>
-          <input type="text" [(ngModel)]="usuario.user" class="form-control" name="user" class="ml-2">
+          <input type="text" class="form-control ml-2" [(ngModel)]="usuario.user" name="user" >
         </div>
-        <div >
+        <div class="form-group">
           <label>LOGIN:</label>
-          <input type="text" [(ngModel)]="usuario.login" class="form-control"  name="login" class="ml-2" >
+          <input type="text" [(ngModel)]="usuario.login" class="form-control ml-2"  name="login"  >
         </div>
-        <div >
+        <div class="form-group" >
           <label>SENHA:</label>
-          <input type="password" [(ngModel)]="usuario.senha" class="form-control" name="senha" class="ml-2" >
+          <input type="password" [(ngModel)]="usuario.senha" class="form-control ml-2" name="senha"  >
         </div>
         <br>
         <div class="row">
-          <div class="col-md-4 mr-4">
+          <div class="col-md-6 mr-4">
             <h6>Tipo</h6><br>
             <div>
-              <select>
-                <option>Usuário</option>
-                <option>Gestor</option>
-                <option>Administrador</option>
+              <select [(ngModel)]="usuario.tipoUser" class="form-control" name="tipoUser">
+                <option *ngFor="let tipo of tipos" [value]="tipo">{{tipo}}</option>
               </select>
             </div>
             <br>
           </div>
-          <div class="col-md-4 ">
-            <h6>Situação</h6><br>
-            <div>
-              <select>
-                <option>Bloqueado</option>
-                <option>Liberado</option>
-              </select>
-            </div>
-          </div>
-          <div class="col-md-4 ">
-            <h6>Data Inicio</h6>
-            <div>
-              <input type="date" [(ngModel)]="usuario.cadastroUser">
-            </div>
-          </div>
+         
         </div>
       </div>
     </div>
     <br>
-    <button type="submit" class="btn btn-success mb-4">Salvar<i class="fas fa-save ml-2"></i></button>
+    <button type="submit" class="btn btn-success mb-4" >Salvar<i class="fas fa-save ml-2"></i></button>
     <br>
   </form>
   <div class="table-hover">
@@ -62,15 +46,17 @@
           <th scope="col">LOGIN</th>
           <th scope="col">TIPO</th>
           <th scope="col">SITUAÇÃO</th>
+          <th scope="col">DT CADASTRO</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let usuario of usuario">
+        <tr *ngFor="let usuario of listaUsuario">
           <th scope="row">{{ usuario.id }}</th>
           <td>{{ usuario.user }}</td>
           <td>{{ usuario.login }}</td>
           <td>{{ usuario.tipoUser }}</td>
           <td>{{ usuario.situacao }}</td>
+          <td>{{usuario.cadastroUser}}</td>
         </tr>
       </tbody>
     </table>

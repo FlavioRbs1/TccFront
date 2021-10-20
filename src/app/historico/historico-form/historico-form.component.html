@@ -1,29 +1,31 @@
 <h1 class="mt-4">Histórico</h1>
 <ol class="breadcrumb mb-4">
-    <li class="breadcrumb-item active">Histórico de consultas de clientes</li>
+  <li class="breadcrumb-item active">Histórico de consultas de clientes</li>
 </ol>
 <form>
-<div class="table-hover">
+  <div class="table-hover">
+    <label>Filtro por Pedido</label><br>
+    <input class=form-group name="filtro" type="text" #filtro>
+    <button type="button" class="btn btn-success" (click)="filtra(filtro)">filtra</button>
     <table class="table">
-        <thead>
-            <tr>
-              <th scope="col">Id</th>
-              <th scope="col">Cliente</th>
-              <th scope="col">Pedido</th>
-              <th scope="col">Situação</th>
-              <th scope="col">Data da analise</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor='let historico of historico'>
-              <th scope="row">{{historico.id}}</th>
-              <td>{{historico.cliente}}</td>
-              <td>{{historico.pedido}}</td>
-              <td>{{historico.situacao}}</td>
-              <td>{{historico.dataAnalise}}</td>
-            </tr>
-          </tbody>
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Cliente</th>
+          <th scope="col">Pedido</th>
+          <th scope="col">Situação</th>
+          <th scope="col">Data da analise</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor='let historico of historico'>
+         <th scope="row">{{historico.id}}</th>
+          <td>{{historico.idCliente?.id}}</td>
+          <td>{{historico.idPedido?.id}}</td>
+          <td>{{historico.situacao}}</td>
+          <td>{{historico.dataAnalise}}</td> 
+        </tr>
+      </tbody>
     </table>
   </div>
 </form>
-  

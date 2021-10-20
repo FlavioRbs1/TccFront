@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { IndicadoresRoutingModule } from './indicadores-routing.module';
 import { IndicadoresFormComponent } from './indicadores-form/indicadores-form.component';
+import { ChartsModule } from 'ng2-charts';
 
 
 @NgModule({
@@ -12,6 +13,7 @@ import { IndicadoresFormComponent } from './indicadores-form/indicadores-form.co
   imports: [
     CommonModule,
     IndicadoresRoutingModule,
+    ChartsModule
     
   ],
   exports: [

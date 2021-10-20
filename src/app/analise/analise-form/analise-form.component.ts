@@ -71,15 +71,32 @@ export class AnaliseFormComponent implements OnInit {
   }
   
   onSubmit() {
-    console.log(this.id) 
-    console.log(this.cliente);
-    console.log(this.data);
-    console.log(this.analisePendencias);
-    console.log(this.analiseRenda);
-    console.log(this.analisePerc);
-  }
+    this.concessao = prompt('Justifique a liberação')
+    while(this.concessao ===""){
+      this.concessao = prompt('Justifique a liberação')
+    }
+    const libera = new Analise();
+    libera.id = Number(this.analise.id);
+    libera.concessao = this.concessao;
+    this.service.liberaSobConcessao(libera).subscribe(
+      response => this.analise =response, errorResponse => this.analise = null
+      )
+    libera.idPedido = Number(this.idPedido);
+    this.service.aprovaSobConcessao(libera.idPedido).subscribe(
+      response => this.analise = response,errorResponse => this.analise = null
+    );
+    const busca = new Analise();
+    busca.idPedido= Number(this.idPedido);
+    busca.idCliente=Number(this.idCliente);
+      this.service.analiseById(busca).subscribe(
+        response => this.analise = response, errorResponse => this.analise = null
+      )
+    } 
+  
 
-  realizaAnalise() {
+
+  enviaEmail() {
+    alert('Email enviado ao cliente com sucesso')
   }
 
 }
