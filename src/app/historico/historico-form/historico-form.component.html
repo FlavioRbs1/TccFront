@@ -4,9 +4,14 @@
 </ol>
 <form>
   <div class="table-hover">
-    <label>Filtro por Pedido</label><br>
-    <input class=form-group name="filtro" type="text" #filtro>
-    <button type="button" class="btn btn-success" (click)="filtra(filtro)">filtra</button>
+    <label class="font-weight-bold">Filtro por Pedido</label><br>
+    <div class="row">
+      <div class="col-md-3">
+        <input class=form-control name="filtro" type="text" #filtro>
+      </div>
+      <button type="button" class="btn btn-success ml-3 " (click)="filtra(filtro)">filtra</button>
+    </div>
+    <br>
     <table class="table">
       <thead>
         <tr>

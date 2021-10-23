@@ -14,6 +14,7 @@ export class Analise{
 	idPedido:number|any;
     situacao:string|any;
 	score:number|any;
+  	classificacao: string | any;
 
 
 	

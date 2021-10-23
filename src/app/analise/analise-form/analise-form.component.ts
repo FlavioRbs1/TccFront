@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { Alert } from 'bootstrap';
+import { jsPDF } from "jspdf";
 import { Observable } from 'rxjs';
 import { Cliente } from 'src/app/clientes/clientes';
 import { ClientesService } from 'src/app/clientes/clientes.service';
@@ -34,7 +34,7 @@ export class AnaliseFormComponent implements OnInit {
   errors: String | any;
   dataAnalise: string | any;
   score: number|any;
-
+  classificacao:string|any;
 
 
 
@@ -90,13 +90,83 @@ export class AnaliseFormComponent implements OnInit {
     busca.idCliente=Number(this.idCliente);
       this.service.analiseById(busca).subscribe(
         response => this.analise = response, errorResponse => this.analise = null
-      )
+        )
     } 
   
 
-
-  enviaEmail() {
-    alert('Email enviado ao cliente com sucesso')
+    public gerarPDF() {
+       
+      const analise: Analise = {
+        dataAnalise: this.analise?.dataAnalise,
+        analiseCpf: "Analise CPF",
+        analiseRenda: "Analise Renda",
+        analisePendencias: "Analise Pendencias",
+        analisePerc: "Analise Perc",
+        score: "Score",
+        situacao: "Situacao",
+        id:"Situacao", 
+        concessao:"Situacao", 
+        idCliente:"Situacao", 
+        idPedido:"Situacao", 
+        classificacao:"Situacao"
+      };
+      this.criaModelo(1,1,1,this.analise);
+    }
+  
+  
+  
+  private criaModelo(idCliente:number,idPedido:number, id: number, analise: Analise): void {
+    let documento = new jsPDF();
+    documento.setFont("Courier", 'bold');
+    documento.setFontSize(20);
+    documento.text("Análise de Crédito", 60, 15);
+  
+    documento.setFontSize(10);
+  
+    this.setTexto(documento, "IdCliente", 10, 20, 'bold');
+    this.setTexto(documento, analise.idCliente.id.toString(), 10, 25, 'normal');
+  
+    this.setTexto(documento, "Pedido", 10, 30, 'bold');
+    this.setTexto(documento, analise.idPedido.id.toString(), 10, 35, 'normal');
+  
+    this.setTexto(documento, "Data Analise", 10, 40, 'bold');
+    this.setTexto(documento, analise.dataAnalise.toString(), 10, 45, 'normal');
+   
+    this.setTexto(documento, "Analise de crédito n°", 10, 50, 'bold');
+    this.setTexto(documento, analise.id.toString(), 10, 55, 'normal');
+  
+    this.setTexto(documento, "TIPO ANALISE", 10, 70, 'bold');
+    this.setTexto(documento, "SCORE", 120, 70, 'bold');
+  
+    this.setTexto(documento, "ANALISE POR CPF", 10, 75, 'bold');
+    this.setTexto(documento, analise.analiseCpf.toString(), 120, 75, 'normal');
+  
+    this.setTexto(documento, "ANALISE DE PENDENCIA", 10, 80, 'bold');
+    this.setTexto(documento, analise.analisePendencias.toString(), 120, 80, 'normal');
+  
+    this.setTexto(documento, "ANALISE POR RENDA", 10, 85, 'bold');
+    this.setTexto(documento, analise.analiseRenda.toString(), 120, 85, 'normal');
+  
+    this.setTexto(documento, "ANALISE POR PERCENTUAL DE ENDIVIDAMENTO", 10, 90, 'bold');
+    this.setTexto(documento, analise.analisePerc.toString(), 120, 90, 'normal');
+  
+    this.setTexto(documento, "SCORE TOTAL", 10, 95, 'bold');
+    this.setTexto(documento, analise.score.toString(), 120, 95, 'normal');
+  
+    this.setTexto(documento, "CLASSIFICACAO DO CLIENTE", 10, 100, 'bold');
+    this.setTexto(documento, analise.classificacao.toString(), 120, 100, 'normal');
+  
+  
+    this.setTexto(documento, "SITUAÇÃO:", 10, 120, 'bold');
+    this.setTexto(documento, analise.situacao.toString(), 35, 120, 'normal');
+  
+    documento.save("Analise de crédito.pdf");
+  }
+  
+  private setTexto(documento: jsPDF, texto: string, x: number, y: number, tipoFont: string): void {
+    documento.setFont("Courier", tipoFont);
+    documento.text(texto, x, y);
+    documento.setFont("Courier", 'normal');
   }
 
 }

@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { ClientesService } from 'src/app/clientes/clientes.service';
@@ -29,6 +29,9 @@ export class AnaliseCartaoComponent implements OnInit {
     private service: AnaliseService,
     private router: Router) { 
 
+      priceList:{analise:String}[]=[{
+        analise:this.analise.analiseCpf
+      },]
     }
 
   ngOnInit(): void {

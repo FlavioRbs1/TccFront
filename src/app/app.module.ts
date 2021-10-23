@@ -20,10 +20,11 @@ import { UsuariosService } from './usuarios/usuarios.service';
 import { PedidoService } from './pedido/pedido.service';
 import { ChartsModule } from 'ng2-charts';
 
+
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

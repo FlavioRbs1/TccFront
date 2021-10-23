@@ -31,4 +31,10 @@ export class AnaliseService {
   aprovaSobConcessao(idPedido:Pedidos):Observable<any>{
     return this.http.put<Pedidos>(`http://localhost:8080/api/pedido/aprovapedido/${idPedido}`,idPedido);
   }
+  getAprovados():Observable<any>{
+    return this.http.get<Analise>(`http://localhost:8080/api/analise/aprovados`);
+  }
+  getReprovados():Observable<any>{
+    return this.http.get<Analise>(`http://localhost:8080/api/analise/reprovados`);
+  }
 }
