@@ -1,0 +1,67 @@
+<script src="./../../js.js" type="text/html"></script>
+
+<h1 class="mt-4">Analise de crédito</h1>
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active" class="font-weight-bold">Abaixo informações sobre a Analise de crédito referente
+        a esta solicitação</li>
+</ol>
+<div class="container">
+    <form #analiseForm="ngForm"  (ngSubmit)="onSubmit()">
+        <div class="row">
+            <div class="col-md-4">
+                <h4>Id Cliente</h4>
+                <div >
+                    <h4>{{ analise?.idCliente.id }}</h4>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <h4>Data da analise</h4>
+                <h4>{{analise?.dataAnalise}} </h4>
+            </div>
+        </div>
+        <br>
+        <div class="table-hover">
+            <table class="table">
+                <thead>
+                    <tr class="table-warning">
+                        <th scope="col">TIPO DE ANALISE</th>
+                        <th scope="col">SCORE</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">ANALISE POR CPF</th>
+                        <td  >{{analise?.analiseCpf}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">ANALISE DE PENDENCIAS</th>
+                        <td >{{analise?.analisePendencias}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">ANALISE POR RENDA</th>
+                        <td  >{{analise?.analiseRenda}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">ANALISE POR PERCENTUAL DE ENDIVIDAMENTO</th>
+                        <td >{{analise?.analisePerc}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">SCORE TOTAL</th>
+                        <td class="font-weight-bold">{{analise?.score}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">CLASSIFICAÇÃO DO CLIENTE</th>
+                        <td class="font-weight-bold">{{analise?.classificacao}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h1>SITUAÇÃO: {{analise?.situacao}}</h1>
+            <div class="container ">
+                <div class="row border">
+                    <button type="button" (click)="gerarPDF()" class="btn btn-success mb-4 mt-4 mr-4 ml-4">Gerar PDF de Analise</button>
+                    <div class="col-6 mt-4"><h4>Gere um PDF desta Analise</h4></div>
+                </div>
+            </div>
+        </div>
+    </form>

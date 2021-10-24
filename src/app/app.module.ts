@@ -19,6 +19,7 @@ import { MetricasService } from './metricas/metricas.service';
 import { UsuariosService } from './usuarios/usuarios.service';
 import { PedidoService } from './pedido/pedido.service';
 import { ChartsModule } from 'ng2-charts';
+import { AnaliseSobConcessaoCartaoComponent } from './analise/analise-sob-concessao-cartao/analise-sob-concessao-cartao.component';
 
 
 @NgModule({

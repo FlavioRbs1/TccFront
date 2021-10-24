@@ -1,22 +1,19 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { jsPDF } from "jspdf";
+import jsPDF from 'jspdf';
 import { Observable } from 'rxjs';
 import { Cliente } from 'src/app/clientes/clientes';
 import { ClientesService } from 'src/app/clientes/clientes.service';
 import { Analise } from '../analise';
 import { AnaliseService } from '../analise.service';
 
-
 @Component({
-  selector: 'app-analise',
-  templateUrl: './analise-form.component.html',
-  styleUrls: ['./analise-form.component.css'],
-
+  selector: 'app-analise-sob-concessao-form',
+  templateUrl: './analise-sob-concessao-form.component.html',
+  styleUrls: ['./analise-sob-concessao-form.component.css']
 })
-export class AnaliseFormComponent implements OnInit {
-
+export class AnaliseSobConcessaoFormComponent implements OnInit {
 
   data: string | any;
   id: number | any;
@@ -36,75 +33,26 @@ export class AnaliseFormComponent implements OnInit {
   score: number | any;
   classificacao: string | any;
 
-
-
   constructor(
     private http: HttpClient,
     private activatedRoute: ActivatedRoute,
     private clienteService: ClientesService,
     private service: AnaliseService,
-    private router: Router) {
+    private router: Router) { 
 
-
-
-  }
+    }
 
   ngOnInit(): void {
-
     let params: Observable<Params> = this.activatedRoute.params
     params.subscribe(urlParams => {
-      this.idCliente = Number(urlParams['idCliente'])
-      this.idPedido = Number(urlParams['idPedido'])
-      console.log(urlParams)
-      if (this.idCliente) {
-        this.clienteService.getById(this.idCliente).subscribe(
-          response => this.cliente = response, errorResponse => this.cliente = null
+      this.id = Number(urlParams['id'])
+      if (this.id) {
+        this.service.getById(this.id).subscribe(
+          response => this.analise = response, errorResponse => this.analise = null
         )
       }
     });
-    const analise = new Analise();
-    analise.idCliente = Number(this.idCliente);
-    analise.idPedido = Number(this.idPedido);
-    this.service.criaAnalisecompleta(analise).subscribe(
-      response => this.analise = response, errorResponse => this.analise = new Analise()
-    );
-
   }
-
-  onSubmit() {
-    let valor = 0;
-    while(valor < 3){
-      const libera = new Analise();
-      libera.id = Number(this.analise.id);
-      libera.concessao = this.concessao;
-      this.concessao = prompt('Justifique a liberação')
-      while (this.concessao === "") {
-        this.concessao = prompt('Justifique a liberação')
-      }
-      console.log(valor);
-      this.service.liberaSobConcessao(libera).subscribe(
-        response => this.analise = response, errorResponse => this.analise = null
-        );
-        valor= valor+1;
-        console.log(valor);
-        libera.idPedido = Number(this.idPedido);
-        this.service.aprovaSobConcessao(libera.idPedido).subscribe(
-          response => this.analise = response, errorResponse => this.analise = null
-          );
-          valor = valor + 1;
-          console.log(valor);
-          const busca = new Analise();
-          busca.idPedido = Number(this.idPedido);
-          busca.idCliente = Number(this.idCliente);
-          this.service.analiseById(busca).subscribe(
-            response => this.analise = response, errorResponse => this.analise = null
-            );
-            valor = valor + 1;
-            console.log(valor);
-          }
-          window.location.href=`/analise-sob-concessao-form/${this.analise.id}`;
-  }
-
 
   public gerarPDF() {
 
@@ -181,6 +129,5 @@ export class AnaliseFormComponent implements OnInit {
     documento.setFont("Courier", 'normal');
   }
 
+  onSubmit(){}
 }
-
-

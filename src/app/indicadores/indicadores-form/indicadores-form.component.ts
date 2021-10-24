@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Validators } from '@angular/forms';
 import { ChartType, ChartOptions, ChartDataSets } from 'chart.js';
 import { Label } from 'ng2-charts';
 import { Analise } from 'src/app/analise/analise';
@@ -13,16 +14,16 @@ export class IndicadoresFormComponent implements OnInit {
   @ViewChild("meuCanvas", { static: true }) elemento: ElementRef | any;
 
   dias: String = "";
-  aprovado: any=[];
-  reprovados:any = [];
+  aprovado: any = [];
+  reprovados: any = [];
   concessao: number | any;
   novos: number | any;
 
 
 
-
   constructor(private service: AnaliseService) {
-    this.aprovado = this.aprovadosFunction();
+    const valor = [];
+
   }
 
   public barChartOptions: ChartOptions = {
@@ -30,15 +31,18 @@ export class IndicadoresFormComponent implements OnInit {
   };
 
   public barChartLabels: Label[] = ['Aprovados', 'Reprovados'];
-  public barChartType: ChartType = 'pie';
+  public barChartType: ChartType = 'bar';
   public barChartLegend = true;
   public barChartPlugins = [];
 
-  public barChartData: ChartDataSets[] = [
-    { data: [this.aprovado, 34], label: 'Series A' },
-    { data: this.aprovado, label: 'Series B' }
-  ];
+  public barChartData:
+    ChartDataSets[] = [{
+      data: this.aprovado , label: 'Series A'
+    }];
+
+
   ngOnInit(): void {
+    
 
   }
   aprovadosFunction() {
