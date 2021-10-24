@@ -25,8 +25,11 @@ export class AnaliseService {
   analiseById(analise: Analise):Observable<Analise>{
     return this.http.get<any>(`http://localhost:8080/api/analise/${analise.idPedido}/${analise.idCliente}`);
   }
-  liberaSobConcessao(analise:Analise):Observable<any>{
-    return this.http.put<Analise>(`http://localhost:8080/api/analise/liberasobconcessao/${analise.id}`,analise);
+  liberaSobConcessao(libera:Analise):Observable<any>{
+    return this.http.put<Analise>(`http://localhost:8080/api/analise/liberasobconcessao/${libera}`,libera);
+  }
+  alteraConcessao(analise:Analise):Observable<any>{
+    return this.http.put<Analise>(`http://localhost:8080/api/analise/insereconcessao/${analise.id}/${analise.concessao}`,analise);
   }
   aprovaSobConcessao(idPedido:Pedidos):Observable<any>{
     return this.http.put<Pedidos>(`http://localhost:8080/api/pedido/aprovapedido/${idPedido}`,idPedido);

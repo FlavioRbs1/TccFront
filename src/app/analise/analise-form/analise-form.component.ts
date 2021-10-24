@@ -85,12 +85,14 @@ export class AnaliseFormComponent implements OnInit {
     this.service.aprovaSobConcessao(libera.idPedido).subscribe(
       response => this.analise = response,errorResponse => this.analise = null
     );
-    const busca = new Analise();
-    busca.idPedido= Number(this.idPedido);
-    busca.idCliente=Number(this.idCliente);
-      this.service.analiseById(busca).subscribe(
-        response => this.analise = response, errorResponse => this.analise = null
-        )
+        const busca = new Analise();
+        busca.idPedido= Number(this.idPedido);
+        busca.idCliente=Number(this.idCliente);
+          this.service.analiseById(busca).subscribe(
+              response => this.analise = response, errorResponse => this.analise = null
+              )
+      
+      //window.location.reload();
     } 
   
 

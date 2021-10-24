@@ -28,8 +28,12 @@ export class ClientesCartaoComponent implements OnInit {
     this.service.salvar(cliente).subscribe(
       response => this.cliente = response, errorResponse => this.cliente = null
     );
+    alert('Cliente salvo com sucesso')
+  }
+  verifica(){
+
+    console.log(this.cliente.id)
   }
   onSubmit(){
-
   }
 }
