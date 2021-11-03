@@ -1,6 +1,9 @@
+import { Injectable } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
-import { ConfiguracaoFormComponent} from '../../configuracao/configuracao-form/configuracao-form.component'
 
+@Injectable({
+  providedIn: 'root'
+})
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',

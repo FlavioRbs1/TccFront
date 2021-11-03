@@ -30,16 +30,37 @@ export class IndicadoresFormComponent implements OnInit {
     responsive: true,
   };
 
-  public barChartLabels: Label[] = ['Aprovados', 'Reprovados'];
-  public barChartType: ChartType = 'bar';
+  public barChartLabels: Label[] = ['Aprovados', 'Reprovados','Em analise'];
+  public barChartType: ChartType = 'pie';
   public barChartLegend = true;
   public barChartPlugins = [];
 
   public barChartData:
     ChartDataSets[] = [{
-      data: this.aprovado , label: 'Series A'
+      data: [30,20,10 ], label: 'Analises'
     }];
 
+    public barChartLabels2: Label[] = ['Aprovado Sob Concessão','Reprovado'];
+    public barChartType2: ChartType = 'bar';
+    public barChartData2:
+    ChartDataSets[] = [{
+      data: [ 63,30,4 ], label: 'Reprovados'
+    }];
+
+    public barChartLabels3: Label[] = ['21/10','22/10','23/10','24/10','25/10','26/10'];
+    public barChartType3: ChartType = 'line';
+    public barChartData3:
+    ChartDataSets[] = [{
+      data: [ 15,40,12,25,32,11 ], label: 'Qtd Analise'
+    }];
+
+    public barChartLabels4: Label[] = ['21/10','22/10','23/10','24/10','25/10','26/10'];
+    public barChartType4: ChartType = 'bar';
+    public barChartData4:
+    ChartDataSets[] = [
+      {data: [ 7,10,5,12,11,5 ], label: 'Reprovados'},
+      {data: [ 8,30,7,13,21,6 ], label: 'Aprovados'}
+  ];
 
   ngOnInit(): void {
     

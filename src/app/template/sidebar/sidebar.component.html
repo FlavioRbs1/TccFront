@@ -6,7 +6,16 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-search-dollar"></i></div>
                     Analise de crédito
                 </a>
-                <a class="nav-link collapsed" routerLink="/metricas-form/1" data-toggle="collapse"
+                <a class="nav-link" routerLink="/indicadores/form">
+                    <div class="sb-nav-link-icon"><i class="fas fa-chart-line"></i></div>
+                    Indicadores
+                </a>
+                <a class="nav-link" routerLink="/historico/form">
+                    <div class="sb-nav-link-icon"><i class="fas fa-history"></i></div>
+                    Histórico de Analises
+                </a>
+                <div class="sb-sidenav-menu-heading text-white">Administração do Sistema</div>
+                <a class="nav-link collapsed" routerLink="/metricas/form/1" data-toggle="collapse"
                     data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                     <div class="sb-nav-link-icon"><i class="fas fa-superscript"></i></div>
                     Metricas
@@ -21,23 +30,21 @@
                 </a>
 -->
 
-                <a class="nav-link collapsed" routerLink="/usuarios-form" data-toggle="collapse" data-target="#collapsePages"
+                <a class="nav-link collapsed" routerLink="/usuarios/form" data-toggle="collapse" data-target="#collapsePages"
                     aria-expanded="false" aria-controls="collapsePages">
                     <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
                     Usuários
                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
-  
-                <div class="sb-sidenav-menu-heading text-white">CONSULTAS</div>
-                <a class="nav-link" routerLink="/indicadores-form">
-                    <div class="sb-nav-link-icon"><i class="fas fa-chart-line"></i></div>
-                    Indicadores
+                <br>
+
+                <a class="nav-link" (click)="Logoff()" routerLink="/login" >
+                    <div class="sb-nav-link-icon"><i class="fa fa-sign-out"></i></div>
+                    Logoff
                 </a>
-                <a class="nav-link" routerLink="/historico-form">
-                    <div class="sb-nav-link-icon"><i class="fas fa-history"></i></div>
-                    Histórico de Analises
-                </a>
+                
             </div>
+
         </div>
     </nav>
 </div>

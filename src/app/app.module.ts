@@ -20,12 +20,20 @@ import { UsuariosService } from './usuarios/usuarios.service';
 import { PedidoService } from './pedido/pedido.service';
 import { ChartsModule } from 'ng2-charts';
 import { AnaliseSobConcessaoCartaoComponent } from './analise/analise-sob-concessao-cartao/analise-sob-concessao-cartao.component';
+import { LoginComponent } from './login/login.component';
+import { LayoutComponent } from './layout/layout.component';
+import { AuthGuard } from './guard/auth-guard.service';
+import { LoginService } from './login/login.service';
+import { GestorGuard } from './guard/gestor-guard.service';
+import { AdminGuard } from './guard/admin-guard.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    LoginComponent,
+    LayoutComponent
   ],
   imports: [
     BrowserModule,
@@ -50,6 +58,10 @@ import { AnaliseSobConcessaoCartaoComponent } from './analise/analise-sob-conces
     ClientesService,
     MetricasService,
     PedidoService,
+    LoginService,
+    AuthGuard,
+    GestorGuard,
+    AdminGuard,
     UsuariosService
   ],
   bootstrap: [AppComponent]

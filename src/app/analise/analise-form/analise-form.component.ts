@@ -102,7 +102,7 @@ export class AnaliseFormComponent implements OnInit {
             valor = valor + 1;
             console.log(valor);
           }
-          window.location.href=`/analise-sob-concessao-form/${this.analise.id}`;
+          window.location.href=`/analise/sob-concessao-form/${this.analise.id}`;
   }
 
 

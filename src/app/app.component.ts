@@ -1,4 +1,6 @@
 import { Component, AfterViewInit } from '@angular/core';
+import { AuthGuard } from './guard/auth-guard.service';
+import { NavbarComponent } from './template/navbar/navbar.component';
 
 
 @Component({
@@ -7,9 +9,15 @@ import { Component, AfterViewInit } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'clientes-app';
+  title = 'Gestão de Crédito';
   href: string | undefined;
 
-  
+
+  constructor(private navBar:NavbarComponent ){
+
+  }
+  ngOnInit(){
+
+  }
 
 }

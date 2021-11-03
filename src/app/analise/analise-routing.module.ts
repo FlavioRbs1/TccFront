@@ -5,12 +5,17 @@ import { Routes, RouterModule, Router } from '@angular/router';
 import { AnaliseCartaoComponent } from './analise-cartao/analise-cartao.component';
 import { AnaliseSobConcessaoFormComponent } from './analise-sob-concessao-form/analise-sob-concessao-form.component';
 import { AnaliseSobConcessaoCartaoComponent } from './analise-sob-concessao-cartao/analise-sob-concessao-cartao.component';
+import { LayoutComponent } from '../layout/layout.component';
+import { AuthGuard } from '../guard/auth-guard.service';
 
 const routes: Routes =[
-  {path: 'analise-form/:idCliente/:idPedido', component:AnaliseFormComponent},
-  {path: 'analise-cartao/:idCliente', component:AnaliseCartaoComponent},
-  {path: 'analise-sob-concessao-form/:id',component:AnaliseSobConcessaoFormComponent},
-  {path: 'analise-sob-concessao-cartao/:id',component:AnaliseSobConcessaoCartaoComponent}
+  {path: 'analise',component:LayoutComponent,children:[
+    {path: 'form/:idCliente/:idPedido', component:AnaliseFormComponent,canActivate:[AuthGuard]},
+    {path: 'cartao/:idCliente', component:AnaliseCartaoComponent,canActivate:[AuthGuard]},
+    {path: 'sob-concessao-form/:id',component:AnaliseSobConcessaoFormComponent,canActivate:[AuthGuard]},
+    {path: 'sob-concessao-cartao/:id',component:AnaliseSobConcessaoCartaoComponent,canActivate:[AuthGuard]},
+    {path: '',redirectTo:'/analise',pathMatch:'full'}
+  ]}
 ];
 
 @NgModule({

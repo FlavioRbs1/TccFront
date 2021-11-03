@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Metricas } from 'src/app/metricas/metricas';
+import { Login } from 'src/app/login/login';
+import { LoginService } from 'src/app/login/login.service';
 
 
 @Component({
@@ -9,8 +10,11 @@ import { Metricas } from 'src/app/metricas/metricas';
 })
 export class SidebarComponent implements OnInit {
 
+  tipoUser:Login|any;
 
-  constructor() { 
+  constructor(
+    private logoff:LoginService
+  ) { 
     
   }
   
@@ -18,6 +22,8 @@ export class SidebarComponent implements OnInit {
     
   }
   
- 
+  Logoff(){
+    this.logoff.fazerLogoff()
+  }
   
 }

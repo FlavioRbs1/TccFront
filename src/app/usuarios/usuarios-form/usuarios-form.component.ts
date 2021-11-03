@@ -19,7 +19,7 @@ export class UsuariosFormComponent implements OnInit {
   constructor(
     private service: UsuariosService) { 
     this.usuario = new Usuarios();
-    this.tipos = ["Usuario","Gestor","Administrador"];
+    this.tipos = ["USUARIO","GESTOR","ADMIN"];
     this.situacoes = ["Bloqueado","Liberado"]
   }
 
@@ -33,7 +33,7 @@ export class UsuariosFormComponent implements OnInit {
     this.service.salvar(this.usuario).subscribe(
       response => this.usuario = response,errorResponse => this.usuario = new this.usuario()
       );
-     window.location.href='/usuarios-form';
+     window.location.href='/usuarios/form';
   }
 
 }
