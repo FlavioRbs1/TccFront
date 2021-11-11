@@ -3,7 +3,7 @@
 <h1 class="mt-4">Analise de crédito</h1>
 <ol class="breadcrumb mb-4">
     <li class="breadcrumb-item active" class="font-weight-bold">Abaixo informações sobre a Analise de crédito referente
-        a esta solicitação zsdg</li>
+        a esta solicitação</li>
 </ol>
 <div class="container">
 
@@ -51,7 +51,7 @@
             <h1>SITUAÇÃO: {{analise?.situacao}}</h1>
             <div class="container">
                 <div class="row">
-                    <button type="submit" class="btn btn-dark mr-2">Liberar sob concessão</button>
+                    <button type="submit" class="btn btn-dark mr-2" routerLink="/analise/sob-concessao-cartao/{{analise.id}}">Liberar sob concessão</button>
                 </div>
                 <div class="row border">
                     <button type="button" (click)="gerarPDF()" class="btn btn-success mb-4 mt-4 mr-4 ml-4">Gerar PDF de Analise</button>

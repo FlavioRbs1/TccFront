@@ -12,9 +12,6 @@ import { Component, OnInit } from '@angular/core';
 export class NavbarComponent implements OnInit {
 
   
-  corNav:String = "navbar-dark"
-  tonalidadeNav = "bg-dark"
-  cor:String|any
 
   constructor() { 
     

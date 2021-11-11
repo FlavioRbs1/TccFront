@@ -8,20 +8,47 @@
             <label>Informe o CPF do cliente: </label>
             <div class="row">
                 <div class="column">
-                    
                     <div class="col-md">
                         <input type="text" class="form-control" [(ngModel)]="cliente.cpf" name="cpf" >
                     </div>
-                                    
                 </div>
-                <div class="column">
-                   
+                <div class="column">                   
                     <div class="mb-4">
                         <button class="btn btn-outline-success my-2 my-sm-0" type="button" routerLink="/clientes/form/{{cliente.cpf}}" >CPF CLIENTE</button>
-                    </div>
-                    
+                    </div>                    
+                </div>
+            </div>
+            <label>Informe o Pedido para analise: </label>
+            <div class="row">
+                <div class="column">                   
+                    <div class="col-md">
+                        <input type="text" class="form-control" [(ngModel)]="pedido.id" name="id" >
+                    </div>                                    
+                </div>
+                <div class="column">                   
+                    <div class="mb-4">
+                        <button class="btn btn-outline-success my-2 my-sm-0"  type="button" (click)="buscaCliente()" routerLink="/clientes/form/{{idCliente.cpf}}" >Nº PEDIDO</button>
+                    </div>                    
                 </div>
             </div>
         </div>
+        <div class="table-hover">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Pedido</th>
+                  <th scope="col">Valor</th>
+                  <th scope="col">Situação</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let pedido of listaPedido">
+                  <th scope="row">{{pedido?. id }}</th>
+                  <td>{{ pedido?.valor }}</td>
+                  <td>{{ pedido?.situacao }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
     </form>
 </div>

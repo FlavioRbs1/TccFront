@@ -5,6 +5,10 @@
 <div class="container">
     <form #clienteForm="ngForm" (ngSubmit)="onSubmit()">
         <div class="row">
+            <div class="form-group">
+                <label>CPF: </label>
+                <input type="text" class="form-control cpf-mask" (change)="validaCpf()" (blur)="verificaCpf()" [(ngModel)]="cliente.cpf" name="cpf">
+            </div>
             <div class="col-md-12">
                 <div class="form-group">
                     <label>NOME:*</label>
@@ -20,19 +24,17 @@
                     <label>TEL 1:*</label>
                     <input type="text" class="form-control" [(ngModel)]="cliente.tel1" name="tel1">
                 </div>
-                <div class="form-group">
-                    <label>DT NASCIMENTO:*</label>
-                    <input type="text" class="form-control" [(ngModel)]="cliente.dtNasc" name="dtNasc">
-                </div>
+               
             </div>
             <div class="col-md-4">
-                <div class="form-group">
-                    <label>CPF: </label>
-                    <input type="text" class="form-control" [(ngModel)]="cliente.cpf" name="cpf">
-                </div>
+               
                 <div class="form-group">
                     <label>TEL 2: </label>
                     <input type="text" class="form-control" [(ngModel)]="cliente.tel2" name="tel2">
+                </div>
+                <div class="form-group">
+                    <label>DT NASCIMENTO:*</label>
+                    <input type="text" class="form-control"  [(ngModel)]="cliente.dtNasc" name="dtNasc">
                 </div>
             </div>
             <div class="col-md-4">

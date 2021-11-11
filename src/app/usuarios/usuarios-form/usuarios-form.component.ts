@@ -27,14 +27,24 @@ export class UsuariosFormComponent implements OnInit {
     this.service.getUsuarios().subscribe(
       resposta => this.listaUsuario = resposta
     );
+    this.busca();
     
   }
   onSubmit(){
     this.service.salvar(this.usuario).subscribe(
       response => this.usuario = response,errorResponse => this.usuario = new this.usuario()
       );
-     window.location.href='/usuarios/form';
+      alert('Usuario salvo com sucesso')
+     this.busca();
   }
-
+  
+  busca() {
+    this.service.getUsuarios().subscribe(
+      resposta => this.listaUsuario = resposta
+    );
+  }
 }
+
+
+
 

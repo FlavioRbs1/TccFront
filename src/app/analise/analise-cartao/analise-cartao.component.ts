@@ -86,6 +86,7 @@ export class AnaliseCartaoComponent implements OnInit {
             valor = valor + 1;
             console.log(valor);
           }
+          
           window.location.href = `/analise/sob-concessao-cartao/${this.analise.id}`;
 }
   public gerarPDF() {

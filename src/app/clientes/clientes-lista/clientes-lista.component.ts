@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router} from '@angular/router';
-import { Alert } from 'bootstrap';
 import { ClientesService } from 'src/app/clientes/clientes.service';
 import { PedidoService } from 'src/app/pedido/pedido.service';
-import { Pedidos } from 'src/app/pedido/pedidos';
+import { Pedidos } from 'src/app/clientes/pedidos';
 import { Cliente } from '../clientes';
 
 @Component({
@@ -15,6 +14,10 @@ export class ClientesListaComponent implements OnInit {
 
   cliente: Cliente |any;
   pedido: Pedidos |any;
+  idCliente:number|any;
+  id: number|any;
+  listaPedido:Pedidos[]|any;
+
   
   constructor(private service:ClientesService, private router: Router,private pedidoService:PedidoService) {
     this.cliente = new Cliente();
@@ -22,17 +25,19 @@ export class ClientesListaComponent implements OnInit {
    }
 
   ngOnInit(): void {
-
+    this.pedidoService.getPedidosEmCredito().subscribe(
+      response => this.listaPedido = response
+    );
 
   }
 
-  buscaPedido(){
-    const pedido = this.pedido.id;  
-    this.pedidoService.getById(pedido).subscribe(
-      response => this.cliente = response, errorResponse => this.cliente = null    
-    )
-  }
-  onSubmit(){ }
+  onSubmit(){}
 
+  buscaCliente(){
+    const valor = Number(this.pedido.id);
+    this.pedidoService.buscaclientebypedido(valor).subscribe(
+      response => this.idCliente = response,errorResponse => this.idCliente = null
+    );
+  }
 
 }
