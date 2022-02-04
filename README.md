@@ -1,4 +1,10 @@
-# ClientesApp
+# FRONT-END TCC
+
+SLIDE DE APRESENTAÇÃO TCC
+https://docs.google.com/presentation/d/1t-JYvcuYGmA7_WraWHLnutWTemsN0C2e2UWQAwD9MPs/edit?usp=sharing
+
+TCC
+https://docs.google.com/document/d/1UI7UiXmeRhq_jONbWPawBpR5JpqJ540L7M79R4Mjv-M/edit?usp=sharing
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.2.
 
