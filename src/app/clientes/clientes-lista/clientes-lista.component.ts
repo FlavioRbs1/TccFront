@@ -36,8 +36,13 @@ export class ClientesListaComponent implements OnInit {
   buscaCliente(){
     const valor = Number(this.pedido.id);
     this.pedidoService.buscaclientebypedido(valor).subscribe(
-      response => this.idCliente = response,errorResponse => this.idCliente = null
+      response =>{
+        this.idCliente = response;
+        window.location.href=`/clientes/form/${this.idCliente.cpf}`
+      },errorResponse => this.idCliente = null
+
     );
+    ;
   }
 
 }
