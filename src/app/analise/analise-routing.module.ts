@@ -12,8 +12,8 @@ import { AdminGuard } from '../guard/admin-guard.service';
 
 const routes: Routes =[
   {path: 'analise',component:LayoutComponent,children:[
-    {path: 'form/:idCliente/:idPedido', component:AnaliseFormComponent,canActivate:[AuthGuard]},
-    {path: 'cartao/:idCliente', component:AnaliseCartaoComponent,canActivate:[AuthGuard]},
+    {path: 'form/:idCliente/:idPedido', component:AnaliseFormComponent},
+    {path: 'cartao/:idCliente', component:AnaliseCartaoComponent},
     {path: 'sob-concessao-form/:id',component:AnaliseSobConcessaoFormComponent},
     {path: 'sob-concessao-cartao/:id',component:AnaliseSobConcessaoCartaoComponent},
     {path: '',redirectTo:'/analise',pathMatch:'full'}
