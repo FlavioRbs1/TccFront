@@ -77,9 +77,9 @@ export class AnaliseFormComponent implements OnInit {
       const libera = new Analise();
       libera.id = Number(this.analise.id);
       libera.concessao = this.concessao;
-      this.concessao = prompt('Justifique a liberação')
-      while (this.concessao === "") {
-        this.concessao = prompt('Justifique a liberação')
+      libera.concessao = prompt('Justifique a liberação')
+      while (libera.concessao === "") {
+        libera.concessao = prompt('Justifique a liberação')
       }
       console.log(valor);
       this.service.liberaSobConcessao(libera).subscribe(
