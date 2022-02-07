@@ -8,8 +8,8 @@ import { AuthGuard } from '../guard/auth-guard.service';
 
 const routes:Routes =[
   {path:'pedido',component:LayoutComponent,children:[
-    {path:'lista/:id',component:PedidoComponent,canActivate:[AuthGuard]},
-    {path:'form/:idCliente',component:PedidoComponent,canActivate:[AuthGuard]}
+    {path:'lista/:id',component:PedidoComponent},
+    {path:'form/:idCliente',component:PedidoComponent}
   ]}
 ];
 
