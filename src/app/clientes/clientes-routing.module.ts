@@ -8,9 +8,9 @@ import { ClientesListaComponent } from './clientes-lista/clientes-lista.componen
 
 const routes: Routes = [
   {path:'clientes',component:LayoutComponent,children:[
-    {path: 'cartao',component: ClientesCartaoComponent,canActivate:[AuthGuard]},
-    {path: 'form/:cpf', component: ClientesFormComponent,canActivate:[AuthGuard]},
-    {path: 'lista',component:ClientesListaComponent,canActivate:[AuthGuard]}
+    {path: 'cartao',component: ClientesCartaoComponent},
+    {path: 'form/:cpf', component: ClientesFormComponent},
+    {path: 'lista',component:ClientesListaComponent}
   ]}
 ];
 
