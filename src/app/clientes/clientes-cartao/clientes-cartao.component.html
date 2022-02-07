@@ -7,7 +7,7 @@
         <div class="row">
             <div class="form-group">
                 <label>CPF: </label>
-                <input type="text" class="form-control cpf-mask" (change)="validaCpf()" (blur)="verificaCpf()" [(ngModel)]="cliente.cpf" name="cpf">
+                <input type="text" class="form-control cpf-mask" (change)="validaCpf()" (blur)="verificaCpf()" [(ngModel)]="cliente.cpf" name="cpf" id="cpf">
             </div>
             <div class="col-md-12">
                 <div class="form-group">
@@ -142,3 +142,4 @@
         </div>
     </form>
 </div>
+
