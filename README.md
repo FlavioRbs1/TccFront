@@ -6,6 +6,16 @@ https://docs.google.com/presentation/d/1t-JYvcuYGmA7_WraWHLnutWTemsN0C2e2UWQAwD9
 TCC
 https://drive.google.com/file/d/1IQ4GvMxAuu0Rr_X_4-pXtHLXwCyQCkgr/view?usp=sharing
 
+<h6>Página Inicial</h6>
+<img src="https://docs.google.com/uc?id=121tWMfO7PrtXXx7fD_cH9-00vNLG77O-">
+
+<h6>Tela Analise de créditos</h6>
+<img src="https://docs.google.com/uc?id=1dsKkY-eCmrrLzohVcjRO1cQJ46Ype5MD">
+
+<h6>Tela Métricas do sistema</h6>
+<img src="https://docs.google.com/uc?id=13ITZkPxXoEazFUe_p877hWec_JOeNcpM">
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.2.
 
 ## Development server
